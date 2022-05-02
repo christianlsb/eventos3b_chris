@@ -1,70 +1,282 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./bootstrap-5.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/estilo.css">
-  <title>NewEvent</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>NewEvent</title>
 </head>
+
 <body>
     <header>
-      <h2>SplitEvent</h2>
+        <h2>
+            SplitEventos
+        </h2>
     </header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">Eventos</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/">Eventos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/cliente/list">Cliente</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/sobre">Sobre</a>
-              </li>
-            </ul>
-          </div>
+            <a class="navbar-brand" href="/">Eventos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cliente/list">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre">Sobre</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
+    </nav>
 
     <div class="container">
-      <img src="./img/evento.jpg" alt="eventos">
+        <script src="chrome-extension://kgejglhpjiefppelpmljglcjbhoiplfn/shadydom.js"></script>
+        <script>
+            if (!window.ShadyDOM) window.ShadyDOM = { force: true, noPatch: true };
+        </script>
+        <div tabindex="0" class="focus:outline-none">
+            <!-- Remove py-8 -->
+            <div class="mx-auto container py-8">
+                <div class="flex flex-wrap items-center lg:justify-between justify-center">
+                    <!-- Card 1 -->
+                    <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
+                        <div>
+                            <img alt="person capturing an image"
+                                src="https://diariodeaparecida.com.br/wp-content/uploads/2021/12/retomada-dos-eventos-a-expectativa-para-2022-e-de-que-tudo-esteja-com-100-de-funcionamento-.jpg" tabindex="0"
+                                class="focus:outline-none w-full h-44" />
+                        </div>
+                        <div class="bg-white dark:bg-gray-800">
+                            <div class="flex items-center justify-between px-4 pt-4">
+                                
+                                <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
+                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700 p-comprar">Comprar</p>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">
+                                        Show - 01</h2>
+                                    <p tabindex="0"
+                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 pl-5">restam 100 ingressos</p>
+                                </div>
+                                <p tabindex="0"
+                                class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus autem quibusdam quaerat commodi debitis non animi enim.</p>
+                            <div class="flex mt-4">
+                                <div>
+                                    <p tabindex="0"
+                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
+                                       Show</p>
+                                </div>
+                                <div class="pl-2">
+                                    <p tabindex="0"
+                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
+                                        Show box</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-4">
+                                <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">
+                                    Arena, Split</h2>
+                                <h3 tabindex="0" class="focus:outline-none text-indigo-700 text-xl font-semibold">
+                                    $350</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 1 Ends -->
+                    <!-- Card 2 -->
+                    <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
+                        <div>
+                            <img alt="person capturing an image"
+                                src="data:image/jpeg;base64,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" tabindex="0"
+                                class="focus:outline-none w-full h-44" />
+                        </div>
+                        <div class="bg-white dark:bg-gray-800">
+                            <div class="flex items-center justify-between px-4 pt-4">
+                                <div>
+                                  
+                                </div>
+                                <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
+                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700 p-comprar">Comprar</p>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">
+                                        Show - 02</h2>
+                                    <p tabindex="0"
+                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 pl-5">restam 100 ingressos</p>
+                                </div>
+                                <p tabindex="0"
+                                class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus autem quibusdam quaerat commodi debitis non animi enim.</p>
+                            <div class="flex mt-4">
+                                <div>
+                                    <p tabindex="0"
+                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
+                                       Show</p>
+                                </div>
+                                <div class="pl-2">
+                                    <p tabindex="0"
+                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
+                                        Show box</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-4">
+                                <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">
+                                    Arena, Split</h2>
+                                <h3 tabindex="0" class="focus:outline-none text-indigo-700 text-xl font-semibold">
+                                    $350</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 Ends -->
+                    <!-- Card 3  -->
+                    <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
+                        <div>
+                            <img alt="person capturing an image"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmSI-FyLdjND9JfQok-qxjIJF0Hrvln9sJjw&usqp=CAU" tabindex="0"
+                                class="focus:outline-none w-full h-44" />
+                        </div>
+                        <div class="bg-white dark:bg-gray-800">
+                            <div class="flex items-center justify-between px-4 pt-4">
+                                <div>
+                                   
+                                </div>
+                                <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
+                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700 p-comprar">Comprar</p>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">
+                                        Show - 03</h2>
+                                    <p tabindex="0"
+                                    class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 pl-5">restam 100 ingressos</p>
+                                </div>
+                                <p tabindex="0"
+                                class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus autem quibusdam quaerat commodi debitis non animi enim.</p>
+                            <div class="flex mt-4">
+                                <div>
+                                    <p tabindex="0"
+                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
+                                       Show</p>
+                                </div>
+                                <div class="pl-2">
+                                    <p tabindex="0"
+                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
+                                        Show box</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-4">
+                                <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">
+                                    Arena, Split</h2>
+                                <h3 tabindex="0" class="focus:outline-none text-indigo-700 text-xl font-semibold">
+                                    $350</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 Ends -->
+                    <!-- Card 4  -->
+                    <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
+                        <div>
+                            <img alt="person capturing an image"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQREtdmK_jkc-Ent4QYtZdQQporP0K5GmSm7w&usqp=CAU" tabindex="0"
+                                class="focus:outline-none w-full h-44" />
+                        </div>
+                        <div class="bg-white dark:bg-gray-800">
+                            <div class="flex items-center justify-between px-4 pt-4">
+                                <div>
+                                   
+                                </div>
+                                <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
+                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700 p-comprar">Comprar</p>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center">
+                                    <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">
+                                        Show - 04</h2>
+                                    <p tabindex="0"
+                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 pl-5">restam 100 ingressos</p>
+                                </div>
+                                <p tabindex="0"
+                                    class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus autem quibusdam quaerat commodi debitis non animi enim.</p>
+                                <div class="flex mt-4">
+                                    <div>
+                                        <p tabindex="0"
+                                            class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
+                                           Show</p>
+                                    </div>
+                                    <div class="pl-2">
+                                        <p tabindex="0"
+                                            class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
+                                            Show box</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between py-4">
+                                    <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">
+                                        Arena, Split</h2>
+                                    <h3 tabindex="0" class="focus:outline-none text-indigo-700 text-xl font-semibold">
+                                        $350</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 Ends -->
+                </div>
+               
+                    <!-- Card 4 Ends -->
+                </div>
+            </div>
+        </div>
     </div>
 
+
     <footer>
-      <div>
-        <h3>Localização</h3>
-        <ul>
-          <li>
-            SENAI CTAI
-          </li>
-          <li>
-            Rodovia, SC-401, 3730 - Saco Grande, Florianópolis - SC, 88032-005
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3>Contato</h3>
-        <ul>
-          <li>
-            empresa@gmail.com
-          </li>
-          <li>
-            (48) 3239-5800
-          </li>
-        </ul>  
-      </div>
-      
-    </footer>
+        <div>
+          <h3>Localização</h3>
+          <ul>
+            <li>
+              SPLIT SHOW
+            </li>
+            <li>
+              R. Pentecoste, 231
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li>
+              split@show.com.br
+            </li>
+            <li>
+              (32) 1113-3221
+            </li>
+          </ul>  
+        </div>
+        
+      </footer>
+
+
+
+
     <script src="./js/popper.min.js"></script>
     <script src="./bootstrap-5.0.0/js/bootstrap.min.js"></script>
-    
+
 </body>
+
 </html>
