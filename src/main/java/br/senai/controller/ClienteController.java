@@ -18,4 +18,11 @@ public class ClienteController {
 
         return "cliente/list";
     }
+
+    @GetMapping("/cliente/adicionar-add")
+     public String add(){
+
+        return "/cliente/adicionar-add";
+    }
+
 }

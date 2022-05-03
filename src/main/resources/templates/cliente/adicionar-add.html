@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilo.css">    
+    <link rel="stylesheet" href="../css/util.css">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,900;1,600&display=swap" rel="stylesheet">
+    <title>SplitEvent</title>
+</head>
+
+<body>
+    <header>
+        <h2>SplitEvent</h2>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Eventos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="/">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cliente/list">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/sobre">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+
+            <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputNome4" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="inputNome4">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="inputEmail4">
+                </div>
+
+                <div class="col-12">
+                  <label for="inputCPF" class="form-label mascara-cep">CPF</label>
+                  <input type="text" class="form-control mascara-cep" id="inputCPF" placeholder="xxx-xxx-xxx-xx">
+                </div>
+
+               
+
+                <div class="col-12">
+                  <div class="form-check">
+                  </div>
+
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-success">Criar</button>
+                </div>
+              </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <h3>Localização</h3>
+            <ul>
+                <li>
+                    SPLIT Evento
+                </li>
+                <li>
+                    R. Plastia, 231
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="h3-contato">Contato</h3>
+            <ul>
+                <li>
+                    split@show.com.br
+                </li>
+                <li>
+                    (32) 1113-3221
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="../js/popper.min.js"></script>
+    <script src="../bootstrap-5.0.0/js/bootstrap.min.js"></script>
+    <script src="../js/util.js"></script>
+
+</body>
+
+</html>
