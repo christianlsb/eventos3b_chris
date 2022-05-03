@@ -56,9 +56,11 @@
                   <input type="email" class="form-control" id="inputEmail4">
                 </div>
 
-                <div class="col-12">
-                  <label for="inputCPF" class="form-label mascara-cep">CPF</label>
-                  <input type="text" class="form-control mascara-cep" id="inputCPF" placeholder="xxx-xxx-xxx-xx">
+                <div class="col-6">
+                  <label for="inputCPF" class="form-label" oninput="mascaraCpf(this)" >CPF</label>
+                  <input type="number" class="form-control" id="inputCPF" oninput="id_cep(this)" placeholder="xxx-xxx-xxx-xx">
+
+                  
                 </div>
 
                
@@ -103,7 +105,8 @@
 
     <script src="../js/popper.min.js"></script>
     <script src="../bootstrap-5.0.0/js/bootstrap.min.js"></script>
-    <script src="../js/util.js"></script>
+    <script src="../js/utiljs"></script>
+  
 
 </body>
 
