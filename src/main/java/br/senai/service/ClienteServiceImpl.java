@@ -17,4 +17,21 @@ public class ClienteServiceImpl implements ClienteService{
     public List<Cliente> findAll(){
         return clienteRepository.findAll(Sort.by("nome"));
     }
+
+    @Override
+    public Cliente findByNome(String nome) {
+        return clienteRepository.findByNome(nome);
+    }
+
+    @Override
+    public Cliente save(Cliente cliente) {
+        try {
+            return  clienteRepository.save(cliente);
+        } catch (Exception e){
+            throw e;
+        }
+
+    }
+
+
 }

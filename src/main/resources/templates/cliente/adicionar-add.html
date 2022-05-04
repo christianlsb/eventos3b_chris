@@ -20,7 +20,7 @@
     </header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Eventos</a>
+            <a class="navbar-brand" href="/">Cliente - add</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -32,10 +32,10 @@
                         <a class="nav-link " aria-current="page" href="/">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/cliente/list">Cliente</a>
+                        <a class="nav-link active" href="/cliente/list">Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/sobre">Sobre</a>
+                        <a class="nav-link" href="/sobre">Sobre</a>
                     </li>
                 </ul>
             </div>
@@ -43,39 +43,57 @@
     </nav>
 
     <div class="container">
+            <h4>Cliente</h4>
+<div th:if ="${isSave}" class="alert alert-sucess">
+    <h4>Operação realizada com sucesso</h4>
 
+</div>
 
-            <form class="row g-3">
+<div th:if="${isError}" class="aler alert-danger">
+    <h4>Ocorreu um erro ao salvar!</h4>
+</div>
+
+                <div class="border border-dark form">
+                    <form class="row g-3" 
+
+                    th:action="@{/cliente/save}"
+                    method="post"
+                    th:object="${cliente}"
+                    >
+                    
+                 
+            <div class="col-md-6">
+                <label for="idInput" class="form-label">Código (id)</label>
+                <input type="number" class="form-control" id="IidInput" readonly placeholder="ID">
+              </div>
+
+            
                 <div class="col-md-6">
-                  <label for="inputNome4" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="inputNome4">
+                  <label for="inputNome4"  class="form-label">Nome</label>
+                  <input type="text" th:field="*{nome}" class="form-control" id="inputNome4" placeholder="Nome">
                 </div>
 
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">E-mail</label>
-                  <input type="email" class="form-control" id="inputEmail4">
+                  <input type="email" th:field="*{email}" class="form-control" id="inputEmail4" placeholder="E-mail">
                 </div>
 
                 <div class="col-6">
                   <label for="inputCPF" class="form-label" oninput="mascaraCpf(this)" >CPF</label>
-                  <input type="number" class="form-control" id="inputCPF" oninput="id_cep(this)" placeholder="xxx-xxx-xxx-xx">
-
-                  
+                  <input type="number" th:field="*{cpf}" class="form-control" id="inputCPF" oninput="id_cep(this)" placeholder="CPF">
                 </div>
 
-               
-
-                <div class="col-12">
-                  <div class="form-check">
-                  </div>
-
-                </div>
                 <div class="col-12">
                   <button type="submit" class="btn btn-success">Criar</button>
                 </div>
+
+                <div class="col-12">
+                    <button type="button" onclick="window.location.href='./list'" class="btn btn-danger">Cancelar</button>
+                  </div>
               </form>
             </div>
         </div>
+    </div>
     </div>
 
     <footer>
