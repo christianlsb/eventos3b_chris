@@ -8,6 +8,5 @@ public interface ClienteService {
 
     public List<Cliente> findAll();
     public Cliente findByNome(String nome);
-    public Cliente save();
-
+    public Cliente save(Cliente cliente);
 }

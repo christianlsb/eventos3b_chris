@@ -16,28 +16,29 @@ public class ClienteController {
 
     @GetMapping("/cliente/list")
     public String findAll(Model model){
-        System.out.println(clienteService.findAll());
-
+        model.addAttribute("clientes", clienteService.findAll());
         return "cliente/list";
     }
 
-    @GetMapping("/cliente/adicionar-add")
-     public String add(Model model){
+    @GetMapping("/cliente/add")
+    public String add(Model model){
         model.addAttribute("cliente", new Cliente());
-        return "/cliente/adicionar-add";
+        return "cliente/add";
     }
 
     @PostMapping("/cliente/save")
-        public String save(Cliente cliente, Model model){
-            try{
-                clienteService.save(cliente);
-                model.addAttribute("cliente", cliente);
-                model.addAttribute("isSave", true);
-                return "cliente/add";
-            } catch (Exception e){
-                model.addAttribute("cliente", cliente);
-                model.addAttribute("isError", true);
-                return "cliente/add";
-            }
+    public String save(Cliente cliente, Model model){
+        try{
+            clienteService.save(cliente);
+            model.addAttribute("cliente", cliente);
+            model.addAttribute("isSave", true);
+            return "cliente/add";
+        }catch (Exception e){
+            model.addAttribute("cliente", cliente);
+            model.addAttribute("isError", true);
+            model.addAttribute("errorMsg", e.getMessage());
+
+            return "cliente/add";
+        }
     }
 }

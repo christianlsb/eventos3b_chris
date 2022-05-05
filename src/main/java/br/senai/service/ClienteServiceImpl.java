@@ -12,9 +12,10 @@ import java.util.List;
 public class ClienteServiceImpl implements ClienteService{
 
     @Autowired
-    private ClienteRepository clienteRepository;
+    ClienteRepository clienteRepository;
 
-    public List<Cliente> findAll(){
+    @Override
+    public List<Cliente> findAll() {
         return clienteRepository.findAll(Sort.by("nome"));
     }
 
@@ -26,12 +27,9 @@ public class ClienteServiceImpl implements ClienteService{
     @Override
     public Cliente save(Cliente cliente) {
         try {
-            return  clienteRepository.save(cliente);
+            return clienteRepository.save(cliente);
         } catch (Exception e){
             throw e;
         }
-
     }
-
-
 }
