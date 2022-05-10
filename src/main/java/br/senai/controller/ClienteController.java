@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.lang.ref.Cleaner;
 
 @Controller
 public class ClienteController {
@@ -41,4 +44,11 @@ public class ClienteController {
             return "cliente/add";
         }
     }
+
+    @GetMapping("/cliente/edit/{id}")
+    public String edit(Model model, @PathVariable long id) {
+       model.addAttribute("cliente", clienteService.findById(id));
+       return "cliente/edit";
+    }
+
 }
