@@ -20,27 +20,23 @@ public class ClienteServiceImpl implements ClienteService{
         return clienteRepository.findAll(Sort.by("nome"));
     }
 
-    @Override
-    public Cliente findById(Long id){
-        Optional listCliente = clienteRepository.findById(id);
-        if (!listCliente.isEmpty()){
-            return (Cliente) listCliente.get();
-        }else {
-            return new Cliente();
-        }
-    }
-
-    @Override
-    public Cliente findByNome(String nome) {
-        return clienteRepository.findByNome(nome);
-    }
-
-    @Override
-    public Cliente save(Cliente cliente) {
+    public Cliente save(Cliente cliente){
         try {
             return clienteRepository.save(cliente);
         } catch (Exception e){
             throw e;
         }
+
     }
+
+    public void delete(Cliente cliente){
+        clienteRepository.delete(cliente);
+    }
+
+
+    @Override
+    public Optional<Cliente> findById(Long id) {
+        return clienteRepository.findById(id);
+    }
+
 }

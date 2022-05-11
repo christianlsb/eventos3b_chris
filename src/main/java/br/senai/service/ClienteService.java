@@ -3,11 +3,15 @@ package br.senai.service;
 import br.senai.model.Cliente;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ClienteService {
-
     public List<Cliente> findAll();
-    public Cliente findById(Long id);
-    public Cliente findByNome(String nome);
     public Cliente save(Cliente cliente);
+    public void delete(Cliente cliente);
+    public Optional<Cliente> findById(Long id);
+
 }
+
+
+
