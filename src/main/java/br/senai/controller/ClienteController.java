@@ -59,7 +59,8 @@ public class ClienteController {
             throw new IllegalArgumentException("Pessoa invalida");
         }
         clienteService.delete(clienteOpt.get());
-        return "/cliente/list";
+        return "redirect:/cliente/list";
+
     }
 }
 
