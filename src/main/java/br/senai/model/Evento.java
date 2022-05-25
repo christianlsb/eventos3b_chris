@@ -25,7 +25,6 @@ public class Evento {
     @NotNull
     private Date data;
 
-
     @NotNull
     @Size(max = 150)
     private String local;
