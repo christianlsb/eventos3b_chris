@@ -5,6 +5,7 @@ import br.senai.model.Evento;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
@@ -12,8 +13,8 @@ import java.util.List;
 public interface EventoRepository extends JpaRepository <Evento, Long> {
     @Override
     List< Evento > findAll();
-    public Cliente findByData(Date Data);
-    public Cliente findByHora(String Hora);
-    public Cliente findByNome(String Nome);
-    public Cliente findByPreco(Double preco);
+    public Evento findByData(Date Data);
+    public Evento findByHora(String Hora);
+    public Evento findByNome(String Nome);
+    public Evento findByPreco(double preco);
 }

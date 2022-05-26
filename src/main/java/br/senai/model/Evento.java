@@ -20,14 +20,10 @@ public class Evento {
     private String nome;
 
     @NotNull
-    private Time hora;
+    private String hora;
 
     @NotNull
     private Date data;
-
-    @NotNull
-    @Size(max = 150)
-    private String local;
 
     @NotNull
     private double preco;
@@ -48,11 +44,11 @@ public class Evento {
         this.nome = nome;
     }
 
-    public Time getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(Time hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
@@ -64,14 +60,6 @@ public class Evento {
         this.data = data;
     }
 
-    public String getLocal() {
-        return local;
-    }
-
-    public void setLocal(String local) {
-        this.local = local;
-    }
-
     public double getPreco() {
         return preco;
     }
@@ -80,7 +68,6 @@ public class Evento {
         this.preco = preco;
     }
 
-
     @Override
     public String toString() {
         return "Evento{" +
@@ -88,7 +75,6 @@ public class Evento {
                 ", nome='" + nome + '\'' +
                 ", hora=" + hora +
                 ", data=" + data +
-                ", local='" + local + '\'' +
                 ", preco=" + preco +
                 '}';
     }
