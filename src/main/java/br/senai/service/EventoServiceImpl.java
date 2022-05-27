@@ -28,6 +28,17 @@ public class EventoServiceImpl implements EventoService {
         }
 
     }
+
+
+    public void delete(Evento evento){
+        eventoRepository.delete(evento);
+    }
+
+
+    @Override
+    public Optional<Evento> findById(Long id) {
+        return eventoRepository.findById(id);
+    }
 }
 
 

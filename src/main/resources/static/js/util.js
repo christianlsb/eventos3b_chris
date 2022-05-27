@@ -1,9 +1,48 @@
-function id_cep(){
-
-    var id_cep = document.getElementById('id_cep')
-    if(id_cep.value.length == 5){
-        id_cep.value = id_cep.value += "-"
+let modal = document.getElementById("modal");
+function modalHandler(val) {
+    if (val) {
+        fadeIn(modal);
+    } else {
+        fadeOut(modal);
     }
-  
-  $('.cep_with_callback').mask('00000-0000', id_cep);
 }
+function fadeOut(el) {
+    el.style.opacity = 1;
+    (function fade() {
+        if ((el.style.opacity -= 0.1) < 0) {
+            el.style.display = "none";
+        } else {
+            requestAnimationFrame(fade);
+        }
+    })();
+}
+function fadeIn(el, display) {
+    el.style.opacity = 0;
+    el.style.display = display || "flex";
+    (function fade() {
+        let val = parseFloat(el.style.opacity);
+        if (!((val += 0.2) > 1)) {
+            el.style.opacity = val;
+            requestAnimationFrame(fade);
+        }
+    })();
+}
+
+
+
+
+
+
+const toggleSearch = () => {
+  document.getElementById("searchInput").classList.toggle("hidden");
+  };
+  const mdOptionsToggle = () => {
+  document.getElementById("md-searchbar").classList.toggle("hidden");
+  document.getElementById("md-searchbar").classList.toggle("flex");
+  };
+  const openMenu = () => {
+  document.getElementById("mobile-menu").classList.remove("hidden");
+  };
+  const closeMenu = () => {
+  document.getElementById("mobile-menu").classList.add("hidden");
+  };

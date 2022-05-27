@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.Optional;
 
 @Controller
 public class EventoController {
@@ -40,6 +43,17 @@ public class EventoController {
 
             return "evento/add";
         }
+    }
+
+    @GetMapping("/evento/list/delete{id}")
+    public String delete(@PathVariable("id") long id) {
+        Optional<Evento> eventoOpt = eventoService.findById(id);
+        if (eventoOpt.isEmpty()) {
+            throw new IllegalArgumentException("Evento invalida");
+        }
+        eventoService.delete(eventoOpt.get());
+        return "redirect:/evento/list";
+
     }
 
 
