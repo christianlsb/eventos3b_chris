@@ -15,265 +15,248 @@
 </head>
 
 <body>
-    <header>
-        <h2>
-            SplitEventos
-        </h2>
-    </header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">Eventos</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/evento/list">Eventos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/cliente/list">Cliente</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sobre">Sobre</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="dark:bg-gray-900">
+      <div>
+          <div class="relative">
+              <!-- For md screen size -->
+              <div id="md-searchbar" class="bg-white dark:bg-gray-900 hidden lg:hidden py-5 px-6 items-center justify-between">
+                  <div class="flex items-center space-x-3 text-gray-800 dark:text-white">
+                      <div>
+                         <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
+                         <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg" alt="search">
+                      </div>
+                      <input type="text" placeholder="Search for products" class="text-sm leading-none dark:text-gray-300 dark:bg-gray-900 text-gray-600 focus:outline-none" />
+                  </div>
+                  <div class="space-x-6">          
+                  </div>
+              </div>
+              <!-- For md screen size -->
 
-    <!-- <div class="container">
-        
-        <script src="chrome-extension://kgejglhpjiefppelpmljglcjbhoiplfn/shadydom.js"></script>
-        <script>
-            if (!window.ShadyDOM) window.ShadyDOM = { force: true, noPatch: true };
-        </script>
-        <div tabindex="0" class="focus:outline-none">
-           
-            <div class="mx-auto container py-8">
-                <div class="flex flex-wrap items-center lg:justify-between justify-center">
-                    
-                    <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
-                        <div>
-                            <img alt="person capturing an image"
-                                src="https://diariodeaparecida.com.br/wp-content/uploads/2021/12/retomada-dos-eventos-a-expectativa-para-2022-e-de-que-tudo-esteja-com-100-de-funcionamento-.jpg" tabindex="0"
-                                class="focus:outline-none w-full h-44" />
-                        </div>
-                        <div class="bg-white dark:bg-gray-800">
-                            <div class="flex items-center justify-between px-4 pt-4">
-                                
-                                <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
-                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700 p-comprar">Comprar</p>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <div class="flex items-center">
-                                    <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">
-                                        Show - 01</h2>
-                                    <p tabindex="0"
-                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 pl-5">restam 100 ingressos</p>
-                                </div>
-                                <p tabindex="0"
-                                class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus autem quibusdam quaerat commodi debitis non animi enim.</p>
-                            <div class="flex mt-4">
-                                <div>
-                                    <p tabindex="0"
-                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
-                                       Evento</p>
-                                </div>
-                                <div class="pl-2">
-                                    <p tabindex="0"
-                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
-                                        Evento box</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between py-4">
-                                <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">
-                                    Arena, Split</h2>
-                                <h3 tabindex="0" class="focus:outline-none text-indigo-700 text-xl font-semibold">
-                                    $350</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
-                        <div>
-                            <img alt="person capturing an image"
-                                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUVFRgVFBUYGBgaGRgYGBkZGRgaGhoaGBgaGhwYGhocIS4lHB4rIRgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHxISHjYrJCQ0NDQxNDU0NjQxNDQ0NDQ0NDQ0NDU0NDQ0NDQ0NDQ0NDQ0NDE0NDQ0NDQ0NDQ0NDE0NP/AABEIALcBEwMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAGAAEDBAUCB//EAEEQAAIBAgQDBAYGCAYDAQAAAAECAAMRBAUSIQYxQVFhcZEiMoGhseETQlKSwdEUFRZTYoKi8CMzQ3LS8SRjwuL/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIDBAX/xAAsEQACAgEDAwIGAQUAAAAAAAAAAQIRIQMSMRNBUWFxBBQygZGxIiNCYqHR/9oADAMBAAIRAxEAPwDyfR2WMWntE70j/vaOLj+9p3bTCzgToR/YPh8I4UeEdBY8UWns3iIjoViktJrSMR1joLLyNOxSLchK1Npu8P5n+j1FqFEcC4KuuoEEb7HraFDMGrRtISsJ82wiu5ZEKqxuBfUN+gsPdMSthtJsTuOYjoVlQLJESdFLdZPh03EKBs0aOFbRcCZVRN56LkGIRaNSm1NW1JZWIW6noQWO3xghmeD0OQ1gefXr7IiUzF0zpUkpSdKkdFF/LVuCshxGDa5NtpaysWcXhtV+jTBupo6mLXD+jcLbsvqt32tvFwJcnmbU5yUl+ugvtI1pyqGVVpXlyjhe6WKNAQn4fyc1GHokgW1EW2+8QPfKwuSWwe/QmAvp2lWqtp6fxR9DTorTWkVa27MUJIN7XCseyeZ4w7xR/krDhmZVF5HaTuJwRKoLIwI86tG0mKgsicyFpOV7T5bzkqOzz+UW0NxBpvHNPt2/vsk2/L3Db4Tkp7PGS4j3EGkdp8vnFJrd8UW0Nw1NAzAEhQSATvYXPrG2+03n4Rr2LUXo1h/BUVWt26amk9el5mYjAPTbRURkYdGBB+Ymtg6mwE6dLSU0ZuZkY3K8RRP+NRdOl3Vgp8GtY+wyoPDyhtTzWqilVqOAQQRqNrEWIsduUEayFCQOUWpo7cjUkyDSO2OoP97ids9+g8ZpZfkT10103ok3I0NUVKmx7Gspv4zNRb4HZl+yOsv47JsTRuatB1A+sUJT74uvvlC8W0dnad0nRyO2VhLNFCY1Fsdm3l2Fr4i/0FN2ZbMTcEjvubb39s7q8L4+++GqHrso/CWMnbQNja80KuKIF9Rv4mb/AC7q7FYIYvCNTYpUVkdbalYWIuARcd4IPtjYan6Q3k2YuzOWJJJ7ST3TvK0LOJg406GzYehiGS1CnUdSFD6EZxdTqsSAe428JSxOWY192w9e53/yX8vV5Tfw2IZLqrEDnsSJNXxz6fXflt6Rmy0G1diXACODfs8Y6g9skxSHUfGc00N9pi406Czby3JMWwWpToOyHdWCgggbbX58oQYvLcUaf+JTqKgF3upstha/dKWWVyEVbnbvM3aFUujKSTt2may0GldiTPPShPWS4fDszBVGpmIUAW3JNgJZxtAq5HfHwrEMLbb38pmo5oZs0eF8Ytj9A3hYH8Zq4XCVMOuqurISfQ9YDb/aRGwdUkC5PmZ1j6hK2vNOjLyGDBzrFhj6zkdhJI3NzuSYOVWvNHHoQTMx73kuLQiJxeRlZKYtMKAi9k5ZSefvmh+ra2g1Pon0LYl9DBRcgD0rW5kSqqDrChWV9A/6jaewecuUaAdlUA7kDvtfpDjDZLhU3FDUR1qsXv8AyrpXzBlKDfAVZ50bxxTXqfZDzPaoNE0kVEUm+lEVBcEEbKN+Qgrh8sd2CqjMx5BQST4Ac4pwceSXgzLL2GKaVXLWUlWBBGxBWxHjGkUKzbwHFutRTxtNa6cgxAFRe8Hr7j3zS/Z2jXGvBVQ3U03NnHd/35wFCy3hcQyEMrFSORBsR7ZrGLX0ugZp43BvTOmojKe8fDtmTiKd4Y4HizWv0eKQVU5arDUO/vkmJ4co4hS+DqA/wMdx3ds0c3VSX/AS8Avk/C9bErVajpP0QBIJsSDfZR1Oxlahh3psVdSp6ggg++WMThK2Hf0gyMDsRceRE1cJxEXATEotVftHZx4MOf8Ae8yhcZWhvKKtHF1EB0O6XG+liPhB+th9J25Q2/VVKsL4eoL/AGH2b2HrMLH5e6GzqVPePx6zaTjNeoLBiIkuYdI30dpKgkQjTKs0MO9pJWq3Epo8TPNpSwCLuT5I+LqfR07arE+kbCw5zvBZe1Oq6MLMhKsO9TY/CQ5Tjmo1UqLzVgfEA7j2jaGnEGDVarV09SqiuD3kb/gfbOGTan7jfAKtUsxnbVbiUXe7E986V52RlgDulgvpHA6k2mpnPC74Urrt6QuLG8qYF/SHjC3jhyTSP/rE5pX1F6i7MF8LtNbAVQHF+R2mHTqby3TrbzqbuNAizmuABew6xYrhupRRarLZW5bjx3HSEOW4YVnpnne15c45xa3WkPqjl2Ej8rTheo+oor7jrDYJ4araS4ircSirWjPUndEZVxaXmVVozVc3kH0BJ2hKKYihh8EzsFAno+R5cmHprpRNfMvoXXub+sRcTJyPLjcWUk+EMkwFlvUYIvfz8phquEVTLiu4LcVVS9NluTftgRiMrqIquyMqPcIxBAa3Ox6z0fM82oUf8pA7fabcA9wgljcZicYQrFnUEkKPVUnsA2k23WKREnkx8qpWfVCRUd7BQSewC5lrA5AlEB8S4X+BeZlmvxEiKVw6BB9oi7Gax1GlUVf6JIl4dVQHxNQU1+zzc+z/ALj1OKKWHGjB0VUjb6Rxdj/f9iD2NxTuSWYse0m8bA5W9VrKp8ekx1I3mbv9C9ivia71Xao+7Mbk7czFCmnwsthqcX6xSd6DawezzhJ6RLJ6acx227u2DZpkGH2R8VBxoqWv1B5Hwk+a8PUsQNdLZuduvzE0jJxxIGr4POwZPh8U6NqRipHUGS4/LnpGzj29JSM1u0ILsDxWHXRikDry1W39skxHDVGsNeEcb76CfcP79kEnK22kmExbodSMVPdIce8cDLlfCVaLWdSpHX5zQw2ePbRVAqJ2Nz9hl3AcTq66MSgYctXzkmJyCnUGvDP36f7/AAjvtJAUHwFCtvRfQ32G/AzKxeXPTPpqR38x5zvE4V6Zsykd8nw2buvot6a9jbyqa4GZgivNl6dCruh0N2dJn4nL3TmLjtG4ibGiuhnoGGY18ttzele3bp/6v5CAmGQE7w84eqrT0Uz6tRCPbuwnPqcX4GArNvHDS1nWE+irOnS9x4GUlm0ZWgL+Cb0hDLjU3Sif4PygXg/WEM+Lv8qke63uH5TOX1L7i7MC72MsUmlZjJ8PN7EHXCQ9FmP1Nx4n5XmDnGMNR2Y9STCjLSKWHRbelU3ItvduQ8oIZlT0uym4sTObTac2xvsUGeNe8tYbBF9yQo7Sfh2y/TahSHLW3afV8us6VKuBlHA5c9U2VSfh7TCHC5RQpb13DN9hN/MzIq5m7Hb0R2LsPdJMNQdzsDE1KXLpAERzhVGmiqqO3mfOUXarVPUntMZKVOmLu1z2CVcZnptpQaR3c4Rgl9K+7Kb8nVfL6SelXcH+ETPxOf2GmggpjttvMrF1y5uTecYTClzsDFKObk7IY9TEM5uzEntMmw2FdzZQTNXCZKq+lUNh2fKWMRmqUhppi3f1ic+0QoWGyVEGqs2/2ZHjs/VAUpAAd34nrMLG5k78ztM5nk9Nt3IPY1WxdQ76j5xTM/ST2RS9iJyZCNCDJ+IHpkBySO3smPVwjobOjKe8EfGRaJVJok9KGIpYlbPa5HrdviIMZzw2yekm4PkfAzHwWNemdjt2Qpy/Ogw0ncdVP97SNrjwVdgU6EGxFowhpmOVJUuyeXUfnBbFYF0O42lxkmBXUy7hMa6G6MR3dJSnaygQWYbPkqDRWUHv6+cjxWSo41UWv3dfKDQlrDY10OxMW2uBkeIwzofSBHfJMPmLrte47DNNc0WoLVBc9vX5ytiMtDDUhv3fKQ/UdiVqdTppabOdhqb0tP8AphTt3WH/AMmYWV4NjWRSNi6g+FxLvEONYYh7chYe6595MxfIjR4upB1SuvUAn28/f8YJhoY5bWWvhmQ81+BgviMGVJtvaEMYHZJgm9IeIhtxSv8A49Pu+cB8GCHHiPjDTiJr4ZIS+pDA0zUyPCGrVRB1Nz4DnMwkCE3DHoI9Xu0rNJuo4JNTMcfproAbBCD5bCW+MMEt1rUx663PW5FvwIgVjMWWqlu+3lDWpilq4FQT6dMgezl8CPKYSi4uLXsO8MC6lVibXndDDM86dlBud5w+PPITsin2EaVJKabsbns+c7fMSRZPRHdMlEZtzJKV72M0UFyyiTEVT1MpG7HaaL0NUYFE5bmEpVhARYbLb7vsJeGKSkLIBftP4TOxGOYyg7E85jtcuRWXcXmbMeczncmOKd5YpYeaKCQik6yIrNJsMZC9A9kdAUNMeWvoD2RRYJs3W4ixKejXpJUHXWlj5jb3Tn9PwFX/ADMO1M9qG491vhNyjxFhqws6gHu29xnOIyfC1RdGUHy+E5LS5TXsVXqYn7P4Wr/kYlQeivsffaV6vCeJQ6ks3eplnG8MMvqE/GUkp4mifQdh4E/Ay4tvh/kTNPKK60g64qjULEAIym2k73J336eXfLlWnhawt9IyH+NfjaZScTYhNqiq4/iX8ZIvEOGf/MpaT2rE4Su/0wvsQYvhQnenURvbaZtXh+unNCf9tj8ISUHwz+pUt3GSPlb86VS/cGjjNrljoDWwjr6ykeIIkZpwsq1MSmzDUO8XlR8Yp9egviBb4TZSbAGyk7TFMnIzcdcM31WXwP5ylWy+mfVfzH5Qk8AWcoz76KotQKpZeWoXG4tuPbIc1Jru1X0bsxYhRYAnsEoNljfVZT7Z1To1E6H2TnSW6x2aPDlQpU0nkwtFm9Mo9/ONhsSbgldwZp51SDoGHUe+U1TsRiYaspYXHUQmzd9WHFoGqpDDxhBiMSfoQPGTLlDZhBDe0LXcU6CoOYFz4zAy5g7i/TebP6PUqsNJAB5k9nP8JVWxGDrAPfNnKuIHopUQIrLUWxLC9uYuPP4SdskdX9Jbjwk1LCrYoFN/CaOEZLJSRiVUY722nWGy4nc7Qnw+UM25W48JpUcgbtC+2N6sI8se1gvTw1tlkrYcruRDbB5NRTd2uZPiKWH6LqmT+LTdJNlbDz803bYAzunkNd9wjW8IbU7j/LRR4C8VWhiGFixF+zb4SX8Q/Re4bAQXhd/rlEHazAfCWn4boBGP0pdwt1CKSpbsJ/6hZhcipgXdix6y0goqNIA2mMviW3i/shqB5nSyaoTbQZt4PhWq3MADvhfXxyKLKo8pmYnOGA2Vj7potbWn9KoW1IpjhJVF3qAdwH5xxlWCXmdR7ybe6YOaZziDyUgTCq4quwPrX8ppHR1ZfVL8EOuyPS6WZUUAQJTsNh6MU8drVqgY7nn2mKL5L1DqMxf0rvljD5u68nMxtRndAksBJ6m50LbSsNcBxDUHMn2Tfo5+rD01U+I3gVhksN5I9e17TrWjFrJm50GNath3HLSZl4nKUfdSDBGpmDDkZ1RzdxzM5pSUXSZaV5Nz9VOh2vNDCPUTkTK+VZgzKCTt3zaXEqRuBNYrFtDoSZq9tzIauYKT6aDxtIK1emdg0gPsIkuUU8DLVqL90r4jLUPqsI9LDg8o9XCN0JmiSksMDBxWHdTsZxSxFQc7yXHh0aR08SRznLJ7ZBRoYfEMeYm7h6uqnYjlMjL6yPt1m1hdINp0pKUbFRi4lU1biS1qd0tecZsul9pwrkrac0nkKJsuwhVSb7mEfD1IawG5fWI7txz9kHkckW7JdwVYq1vAXm0IuUWCeQ8etSRTcX3Mo1c2RPUQXPdB3E5xoOm4J6iQUs3Bb0gLTJ6SjzkuU/AVYfH1H2HWXqWDYn0m98yctzGmwHTsM3KeJUi4YSJprhUXHIqmFVdy15VNVLiZ2bZoBdVYXmPh8c1zc3mkNNtZYOaQfJi1A9ETOxuNfUCNrTFoZnbnL64pGXmJC0FF3Vhusgq5iSd2MmWsrdZiZkhFyPGYiZoynnynStFVaIcqeQ9S3WRYpBbYwawWd3NmabBxykbb7c5PSlF2UpJmLjn0k85lvVdtk2Pa34S9mde5MxVxpDTsWEQ2rM6tlVcsT3xTa/WA7YoYFUQHOIB/0h5mPlWY1cPU10iofSV9JVcWNidmBHQQjXgup9iofBG/KT0uB6t96VT7p/KeZ05XyvyhpUigOL8aSBqo376FDoP9k6r5y9em2HdkBOk3SlSQ6gb2JVQQt7Xsb+8SxmXDa4dNT/4bENo1kJqYDkC1u0ecGcAAKgCbm4AF13PYOhhK4tLDse3Fkq1FX0TTUkbE3522vIcQQ24UL02hjR4TDjWoLC5Fwwtcc+sl/ZIDmp+8v5y+lLygSMtOMMUFC/4Fh20KXT+WSY3Pq7IyVWpKtxfRTRD1PrhbjcKNhvfsms3DSAeqv3l/OeZ1ahvY9NvL+7eyZ6v9Ou9lKLYRY1HpFTq1I4LIwPrL3jobEecehmJHWYeV4hVY3XUDa9zYbd1ufzhiMspNQNVBb0HYdoKg/iJOn/O2uwnGnRBTz76NgTuwINrX8Lg/CEicUlgrfQ0PSAIvT6EX7ec82FGpUGtU1A+sVAspsL6h9UbX3sN4TcI0PpKRRt/TY9u4A3B69YoScpV5G40sGhnOYGuFBSmmkkgomkm9tjubjaZDIv2b+2E75MO2QtkfY3umr05E0wewOKajUFRERrAjS41Kbi24BE3E4wcEf+PhttvUb/nOlyQX3+Hzk44fQ9I9kqDJn5pjzXYOURdgLICBtc33J33j4R1AJK3F+U1f1COhPlJDkxC2vM3FpktMH8PnJoOzBKb3BW1RSwG/MWI3k6cYsAB+jYb7jb/1yZ+H9TG/wnA4aHZLUJVyNIy62ZK7s7qBq+qmyjuAJNhOjiEtsDfxlt+HDfb4R0yBh2S0pJhtLeW8RvRp6FpUm3J1OrFt+mzATvF8dvTGh6NJWYHZEYMoP1t3tfs8PC8YyjQjMQLgMb+AvASrQd6jhV1ekSdwLAnnuRYd8z1ntSpZZUYvuw0w2aqwBJuDuG/7llsSACQe+3dBrhTB/SPUTUtlUG43U7ncdvjKGd4210UWBtvfp2EfOPrVHcydmaC18c2hnAuiA+lvbVbZbiU8JnzKQ6ncWNm3U3+Igdg8yqU1ZFYhHUq6fVYEWvbkGHRuY8NoQ8JZT9O+lQWXSSb2UBgQLXJsTz7zJ0/iHJ0NwoI34vqHnSoH+Uj/AO5k4vNfpHDlUTYAqgIBt1sSd9/dN+pwY32PIg/AyliOFCvNCPOdS/xa/JLjLuzKfFpYs1wB373PIfOaOUcVtSXQ1JKgubMxa+/TY228Jk5/lRpU7gE+kAQLm1wbXty+cg4cyz6VT6TW2PYAewHqefukObc9gKLWUwpr8WI+z4RLdzuJjV8ejOWVQim1lBLW2AO53Nzc+2WW4f8A4m85TfIXU3BM3SceF/sTUnySeh2nyjTj9XVR1jSrfgW1mQOLsR/B91v+U7XjCv1VD7HH/wBQbivPH+Y1PJ07UambZy+IKl1Uabgab9efOQJmDBgxALAg3IFza+17bDfkJSvFeS9WTdt8j2oJsLxY6LpFNTa/1iPcBJ04zb61K/g9vihgleK8pfEaixYtqCzE8YF0dGo2DqVuH3AYWO2ixgoiatrgHvIA8zEi36gW33nBt/YkT1JSzIpKuCaiLMRcG3UG49hhrlnE1CnQFB8O9RwrgkPpVtZYgbXI2NuXQwSyvDB3ILBQBc/LaGOW4KmKY2IbcE6tzY25juAmmjGTeGTLkDMUabNdENNeil9ZH8xAno/BWERKKMRq1IH9a2ks7gqQBubIp8GEzkyegTcqpPeLwly7MTSUKmkACwAVR+E009KUZW0DaZuUMNr2VF9rkfG0tpkdX92g/mP5zLTiSp0cD+Vfynf7SVf3nuX8pcup2oWDYTJavVB5qZYTKG6qfIQeGfVTzqGTJnj/AG28zJcdV90FxCajlKfWLD3Sx+qqPb/UIMJnTdWJ9slXN+3fzmT0tTyG5GviMspA+iZRq4ZBK5zVPrKfY0jfMaJ5q33pcYzXNhaGqIg6SA6RvYS2uIwzc2YefznaphD/AKxHtH4rNN9cp/gVFQ10Is1NHBBB2AuD/KZ41xPg0p12VRYG7adWrT6bALc7k2A3757i2BwzcsR71mPj+CcLWbUa4J7ZE5Rksc+zKSdnnvCmdUqCNfBFybI9VXqHaxtcE6V6na0Gc79f2fjPZMJwItIn6OspB6FiAfEWtAHivhgolTEKwC06jowLX3RwnobXNzbnMpVtpMP7rBF8NpXUzpz2RWV2PedJIUeJv3SfLMWtN0cgko4awA5BtWzE8zy5SgLdTOwm1+h2v39njM4yp2img6PHFP8Ad1P6f+UX7bp9ip/T/wAoCRpv8zMnagjzrPUrkkKwvpvqAN9JuOTctpkCuoZGtbQQRpRAdiDcnqdtr3lO8WqZvVk3bBRoPTx2n2H9qp+cibjhD/pMf5U/OA+qNeafNTDag6/bin+5Pkv/ACigLFF8zPyG1HF495xHvOcs6inMcEdYAOJNRwztyEVLEov1L+LfhaWP1qfsjz+UaUe7E7OmwaqN7k9xsJS/RzLBzH+H3zkY0fZ98cnF8ArLWW0ipJJtfblf4wkw9awAvygsmYqPqnzEnGd2+qfOaac4xXImrCpK0tU6kDRnx6J/V8p2vEbfYH3j+U268fJO1hulaSivAdOJ2H+mPvH8pKOK2/dD75/KLrR8i2sNBiJOmIgQvFvbS/r+UnTi9etNvYw/KUtaPkTiw0WrJlq98CRxgn7pvNZ2vGSfun+8sfWj5FtYZGoZyXMEv20p/un81/OcHjZP3T/eX8o+tHyPawyDzoVIGftvT/ct95ZG3G69KLffH5Q60fI9rDN3Epu47YKNxrf/AEf6/wD8yI8Yf+n+v5RrWh5CmGNPEsORI9pg/wATYlnR11vZiCyndSRYhh1vsJmftd/6v6/lKeL4gD86ZH83yk6mrpyjSY0mZf6Kes2cBSpGloZW1Hct2H+HsH5zLbHA/VPmJ1TzPTyW/t+U5IuKZTyS4zLHTe3o9GG49tuUz2uOYmqnEBAt9GLf7vlKWJxiNyp6fBrjytKkoPMWCvuVrxTi8a8yKOzGvG1RtUAHvFGvFEBzHjRQAeMYojABoooogFFFFAB4o0UAHjxooAPFGigA944M5jxgdgx7zgR4AOTGvGMaACvFeKNAB4o0UAHjRRQAUUaKIB4o0UAOhFFGjAeNFFABRRooAKKKKIBR4ooANFFFEAooooAKOBFFGB1pMVjFFABWMWkxRRgLSYtJiigA+kxaTFFABaTFpMaKAC0mLSYooAPpMbSYooAIqZxFFEwQooooAKKKKADxRRRgNFFFEAooooAf/9k=" tabindex="0"
-                                class="focus:outline-none w-full h-44" />
-                        </div>
-                        <div class="bg-white dark:bg-gray-800">
-                            <div class="flex items-center justify-between px-4 pt-4">
-                                <div>
-                                  
-                                </div>
-                                <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
-                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700 p-comprar">Comprar</p>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <div class="flex items-center">
-                                    <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">
-                                        Evento - 02</h2>
-                                    <p tabindex="0"
-                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 pl-5">restam 100 ingressos</p>
-                                </div>
-                                <p tabindex="0"
-                                class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus autem quibusdam quaerat commodi debitis non animi enim.</p>
-                            <div class="flex mt-4">
-                                <div>
-                                    <p tabindex="0"
-                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
-                                       Evento</p>
-                                </div>
-                                <div class="pl-2">
-                                    <p tabindex="0"
-                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
-                                        Evento box</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between py-4">
-                                <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">
-                                    Arena, Split</h2>
-                                <h3 tabindex="0" class="focus:outline-none text-indigo-700 text-xl font-semibold">
-                                    $350</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              <!-- For large screens -->
+              <div class="dark:bg-gray-900 bg-gray-50 px-6 py-9">
+                  <div class="container mx-auto flex items-center justify-between">
+                      <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
+                          <img class="dark:hidden" src="/img/logoSplit.png" alt="logo">
+                         <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg1dark.svg" alt="logo">
+                      </h1>
+                      <ul class="hidden w-8/12 md:flex items-center justify-center space-x-8">
+                          <li>
+                              <a href="/" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Home</a>
+                          </li>
+                          <li>
+                              <a href="/evento/list" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Evento</a>
+                          </li>
+                          <li>
+                              <a href="/cliente/list" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Cliente</a>
+                          </li>
+                          <li>
+                              <a href="/sobre" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Sobre nós</a>
+                          </li>
+                      </ul>
+
                   
-                    <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
-                        <div>
-                            <img alt="person capturing an image"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmSI-FyLdjND9JfQok-qxjIJF0Hrvln9sJjw&usqp=CAU" tabindex="0"
-                                class="focus:outline-none w-full h-44" />
-                        </div>
-                        <div class="bg-white dark:bg-gray-800">
-                            <div class="flex items-center justify-between px-4 pt-4">
-                                <div>
-                                   
-                                </div>
-                                <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
-                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700 p-comprar">Comprar</p>
+
+                          <div class="flex lg:hidden">
+                              <button aria-label="show options" onclick="mdOptionsToggle()" class="text-black dark:text-white dark:hover:text-gray-300 hidden md:flex focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
+                                  <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5.svg" alt="toggler">
+                                  <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5dark.svg" alt="toggler">
+                              </button>
+
+                              <button aria-label="open menu" onclick="openMenu()" class="text-black dark:text-white dark:hover:text-gray-300 md:hidden focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
+                                  <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5.svg" alt="toggler">
+                                  <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5dark.svg" alt="toggler">
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- For small screen -->
+              <div id="mobile-menu" class="hidden absolute dark:bg-gray-900 z-10 inset-0 md:hidden bg-white flex flex-col h-screen w-full">
+                  <div class="mt-6 p-4">
+                      <ul class="flex flex-col space-y-6">
+                          <li>
+                              <a href="javascript:void(0)" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                  Home
+                                  <div>
+                                      <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
+                                      <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow">  
+                                  </div>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="javascript:void(0)" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                  Eventos
+                                  <div>
+                                      <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
+                                      <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow">  
+                                  </div>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="javascript:void(0)" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                  Cliente
+                                  <div>
+                                      <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
+                                      <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow">  
+                                  </div>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="javascript:void(0)" class="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                  Sobre nós
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+        <div class="flex items-center justify-between h-full w-full absolute z-0">
+            <div class="w-1/3 bg-white dark:bg-gray-900 h-full"></div>
+            <div class="w-4/6 ml-16 bg-gray-100 dark:bg-gray-800 h-full"></div>
+        </div>
+        <div class="xl:px-20 px-8 py-20 2xl:mx-auto 2xl:container relative z-40">
+            <h1 class="text-5xl font-bold xl:block hidden leading-tight text-gray-800 dark:text-white ">
+              Major no <br />
+              Rio de Janeiro
+            </h1>
+
+            <div class="slider">
+                <div class="slide-ana">
+                    <div class="flex relative" style="transform: translateX(0%)">
+                        <div class="mt-14 md:flex">
+                            <div class="relative lg:w-1/2 sm:w-96 xl:h-96 h-80">
+                                <img src="http://noticias.maisesports.com.br/wp-content/uploads/2022/05/CSGO-Final-IEM-Major-Rio-2022.jpg" alt="image of profile" class="w-full h-full flex-shrink-0 object-fit object-cover shadow-lg rounded" />
+                                <div class="w-32 md:flex hidden items-center justify-center absolute top-0 -mr-16 -mt-14 right-0 h-32 bg-indigo-100 rounded-full">
+                                   <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/testimonial-svg1.svg" alt="commas"/>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <div class="flex items-center">
-                                    <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">
-                                        Evento - 03</h2>
-                                    <p tabindex="0"
-                                    class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 pl-5">restam 100 ingressos</p>
-                                </div>
-                                <p tabindex="0"
-                                class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus autem quibusdam quaerat commodi debitis non animi enim.</p>
-                            <div class="flex mt-4">
+                            <div class="md:w-1/3 lg:w-1/3 xl:ml-32 md:ml-20 md:mt-0 mt-4 flex flex-col justify-between">
                                 <div>
-                                    <p tabindex="0"
-                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
-                                       Evento</p>
+                                    <h1 class="text-2xl font-semibold xl:leading-loose text-gray-800 dark:text-white ">Os melhores eventos de games estão aqui!!</h1>
+                                    <p class="text-base font-medium leading-6 mt-4 text-gray-600 dark:text-gray-200  ">Garanta seu ingresso.</p>
                                 </div>
-                                <div class="pl-2">
-                                    <p tabindex="0"
-                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
-                                        Evento box</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center justify-between py-4">
-                                <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">
-                                    Arena, Split</h2>
-                                <h3 tabindex="0" class="focus:outline-none text-indigo-700 text-xl font-semibold">
-                                    $150</h3>
+                                <div class="md:mt-0 mt-8">
+                                    <p class="text-base font-medium leading-4 text-gray-800 dark:text-white ">SplitEvent</p>
+                                    <p class="text-base leading-4 mt-2 mb-4 text-gray-600 dark:text-gray-200  ">2022</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                   
-                    <div tabindex="0" class="focus:outline-none mx-2 w-72 xl:mb-0 mb-8">
-                        <div>
-                            <img alt="person capturing an image"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQREtdmK_jkc-Ent4QYtZdQQporP0K5GmSm7w&usqp=CAU" tabindex="0"
-                                class="focus:outline-none w-full h-44" />
-                        </div>
-                        <div class="bg-white dark:bg-gray-800">
-                            <div class="flex items-center justify-between px-4 pt-4">
-                                <div>
-                                   
-                                </div>
-                                <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
-                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700 p-comprar">Comprar</p>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <div class="flex items-center">
-                                    <h2 tabindex="0" class="focus:outline-none text-lg dark:text-white font-semibold">
-                                        Evento - 04</h2>
-                                    <p tabindex="0"
-                                        class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 pl-5">restam 100 ingressos</p>
-                                </div>
-                                <p tabindex="0"
-                                    class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus autem quibusdam quaerat commodi debitis non animi enim.</p>
-                                <div class="flex mt-4">
-                                    <div>
-                                        <p tabindex="0"
-                                            class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
-                                           Evento</p>
-                                    </div>
-                                    <div class="pl-2">
-                                        <p tabindex="0"
-                                            class="focus:outline-none text-xs text-gray-600 dark:text-gray-200 px-2 bg-gray-200 dark:bg-gray-700 py-1">
-                                            Evento box</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-between py-4">
-                                    <h2 tabindex="0" class="focus:outline-none text-indigo-700 text-xs font-semibold">
-                                        Arena, Split</h2>
-                                    <h3 tabindex="0" class="focus:outline-none text-indigo-700 text-xl font-semibold">
-                                        $50</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  
-                </div>
-               
-               
                 </div>
             </div>
         </div>
-    </div> -->
+        <style>
+            .slider {
+                width: 100%;
+                height: 450px;
+                position: relative;
+                overflow: hidden;
+            }
+    
+            .slide-ana {
+                height: 500px;
+            }
+    
+            .slide-ana > div {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                transition: all 1s;
+            }
+            @media (min-width: 300px) and (max-width: 884px) {
+                .slider {
+                    height: 650px;
+                }
+            }
+            @media (min-width: 768px) and (max-width: 1023px) {
+                .slider {
+                    height: 381px;
+                }
+            }
+            @media (min-width: 1024px) and (max-width: 1280px) {
+                .slider {
+                    height: 379px;
+                }
+            }
+        </style>
+    
+    
+
+  
+  
+          <div class="mx-auto container py-16 xl:px-20 lg:px-12 sm:px-6 px-4" style="margin-top: 200px">
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 md:gap-8 gap-4">
+                  <div class="flex flex-col flex-shrink-0">
+                      <div class="dark:text-white">
+                        <a href="./index.html"><img class="dark:hidden" src="/img/logoSplit.png" alt="icon"></a>
+                          
+                          <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer-I-svg1dark.svg" alt="icon">
+                      </div>
+                      <p class="text-sm leading-none text-gray-800 mt-4 dark:text-white">Copyright © 2022 SplitEvent</p>
+                      <p class="text-sm leading-none text-gray-800 mt-4 dark:text-white">Todos os direitos reservados</p>
+                      <div class="flex items-center gap-x-4 mt-12">
+                          <button aria-label="instagram" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
+                              <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M9.00081 0.233398C6.68327 0.233398 6.39243 0.243215 5.48219 0.283343C4.57374 0.323644 3.95364 0.462973 3.41106 0.667403C2.84981 0.87855 2.37372 1.161 1.8994 1.62066C1.42473 2.08016 1.13317 2.54137 0.914502 3.08491C0.702944 3.61071 0.558942 4.2116 0.518053 5.09132C0.477342 5.97311 0.466675 6.25504 0.466675 8.50015C0.466675 10.7453 0.476986 11.0262 0.518231 11.9079C0.560009 12.788 0.703833 13.3887 0.914679 13.9144C1.13282 14.4581 1.42437 14.9193 1.89887 15.3788C2.37301 15.8386 2.8491 16.1218 3.40999 16.3329C3.95293 16.5373 4.57321 16.6767 5.48148 16.717C6.39171 16.7571 6.68238 16.7669 8.99974 16.7669C11.3175 16.7669 11.6074 16.7571 12.5176 16.717C13.4261 16.6767 14.0469 16.5373 14.5898 16.3329C15.1509 16.1218 15.6263 15.8386 16.1004 15.3788C16.5751 14.9193 16.8667 14.4581 17.0853 13.9145C17.2951 13.3887 17.4391 12.7878 17.4818 11.9081C17.5227 11.0263 17.5333 10.7453 17.5333 8.50015C17.5333 6.25504 17.5227 5.97328 17.4818 5.09149C17.4391 4.21143 17.2951 3.61071 17.0853 3.08508C16.8667 2.54137 16.5751 2.08016 16.1004 1.62066C15.6258 1.16082 15.1511 0.878377 14.5893 0.667403C14.0453 0.462973 13.4249 0.323644 12.5164 0.283343C11.6062 0.243215 11.3164 0.233398 8.99814 0.233398H9.00081ZM8.23525 1.72311C8.46245 1.72277 8.71597 1.72311 9.00077 1.72311C11.2792 1.72311 11.5492 1.73104 12.449 1.77065C13.281 1.8075 13.7326 1.94218 14.0334 2.05533C14.4316 2.20517 14.7155 2.38428 15.014 2.67362C15.3127 2.96295 15.4976 3.23851 15.6526 3.62429C15.7694 3.91535 15.9086 4.3528 15.9464 5.15881C15.9873 6.03026 15.9962 6.29204 15.9962 8.49823C15.9962 10.7044 15.9873 10.9662 15.9464 11.8377C15.9084 12.6437 15.7694 13.0811 15.6526 13.3722C15.4979 13.758 15.3127 14.0327 15.014 14.3218C14.7153 14.6112 14.4318 14.7903 14.0334 14.9401C13.7329 15.0538 13.281 15.1881 12.449 15.225C11.5494 15.2646 11.2792 15.2732 9.00077 15.2732C6.72217 15.2732 6.45212 15.2646 5.55256 15.225C4.72055 15.1878 4.26899 15.0531 3.96801 14.9399C3.56978 14.7901 3.28533 14.611 2.98666 14.3216C2.68799 14.0323 2.5031 13.7574 2.34808 13.3715C2.23128 13.0804 2.09208 12.643 2.05421 11.837C2.01332 10.9655 2.00514 10.7037 2.00514 8.49617C2.00514 6.2886 2.01332 6.0282 2.05421 5.15674C2.09226 4.35073 2.23128 3.91329 2.34808 3.62188C2.50275 3.2361 2.68799 2.96054 2.98666 2.67121C3.28533 2.38187 3.56978 2.20276 3.96801 2.05258C4.26881 1.93891 4.72055 1.80457 5.55256 1.76755C6.33977 1.7331 6.64484 1.72277 8.23525 1.72105V1.72311ZM13.5558 3.09574C12.9905 3.09574 12.5318 3.53956 12.5318 4.08741C12.5318 4.63508 12.9905 5.07942 13.5558 5.07942C14.1212 5.07942 14.5799 4.63508 14.5799 4.08741C14.5799 3.53974 14.1212 3.09574 13.5558 3.09574ZM9.00082 4.25481C6.58071 4.25481 4.61855 6.15564 4.61855 8.50013C4.61855 10.8446 6.58071 12.7446 9.00082 12.7446C11.4209 12.7446 13.3824 10.8446 13.3824 8.50013C13.3824 6.15564 11.4209 4.25481 9.00082 4.25481ZM9.00079 5.74454C10.5717 5.74454 11.8453 6.97818 11.8453 8.50013C11.8453 10.0219 10.5717 11.2557 9.00079 11.2557C7.42975 11.2557 6.15632 10.0219 6.15632 8.50013C6.15632 6.97818 7.42975 5.74454 9.00079 5.74454Z"
+                                      fill="white"
+                                  />
+                              </svg>
+                          </button>                  
+                          <button aria-label="twitter" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
+                              <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M7.5208 3.59864L7.55438 4.13498L6.99479 4.0693C4.95791 3.81755 3.17843 2.9638 1.66756 1.52992L0.928908 0.818458L0.73865 1.34385C0.33575 2.51503 0.593158 3.75188 1.43253 4.58375C1.8802 5.04346 1.77948 5.10914 1.00725 4.8355C0.73865 4.74793 0.503625 4.68226 0.481242 4.71509C0.4029 4.79171 0.6715 5.78776 0.884142 6.18181C1.17513 6.72909 1.76828 7.26542 2.4174 7.58284L2.96579 7.83459L2.31668 7.84554C1.68994 7.84554 1.66756 7.85648 1.73471 8.08634C1.95854 8.79781 2.84268 9.55305 3.82755 9.88142L4.52143 10.1113L3.91708 10.4615C3.02175 10.965 1.96973 11.2496 0.917717 11.2715C0.414092 11.2825 0 11.3262 0 11.3591C0 11.4685 1.36538 12.0815 2.15999 12.3223C4.54382 13.0338 7.37531 12.7273 9.50173 11.5123C11.0126 10.6476 12.5235 8.92915 13.2286 7.26542C13.6091 6.37883 13.9896 4.75888 13.9896 3.98174C13.9896 3.47824 14.0232 3.41257 14.6499 2.81056C15.0192 2.4603 15.3662 2.0772 15.4333 1.96775C15.5452 1.75978 15.534 1.75978 14.9633 1.94586C14.012 2.27422 13.8777 2.23044 14.3477 1.73789C14.6947 1.38763 15.1088 0.752784 15.1088 0.566709C15.1088 0.533872 14.9409 0.5886 14.7506 0.68711C14.5492 0.796566 14.1015 0.96075 13.7658 1.05926L13.1614 1.24534L12.613 0.884131C12.3108 0.68711 11.8856 0.468198 11.6617 0.402524C11.0909 0.249286 10.218 0.271177 9.70318 0.446307C8.30422 0.938859 7.42008 2.20855 7.5208 3.59864Z"
+                                      fill="white"
+                                  />
+                              </svg>
+                          </button>
+                          <button aria-label="youtube" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 opacity-50 w-8 h-8 flex-shrink-0 bg-gray-800 cursor-pointer hover:bg-gray-700 rounded-full flex items-center justify-center">
+                              <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M15.6677 1.17143C16.4021 1.36664 16.9804 1.94183 17.1767 2.67227C17.5333 3.99611 17.5333 6.75832 17.5333 6.75832C17.5333 6.75832 17.5333 9.52043 17.1767 10.8444C16.9804 11.5748 16.4021 12.15 15.6677 12.3453C14.3369 12.7 9.00001 12.7 9.00001 12.7C9.00001 12.7 3.66309 12.7 2.33218 12.3453C1.59783 12.15 1.0195 11.5748 0.823232 10.8444C0.466675 9.52043 0.466675 6.75832 0.466675 6.75832C0.466675 6.75832 0.466675 3.99611 0.823232 2.67227C1.0195 1.94183 1.59783 1.36664 2.33218 1.17143C3.66309 0.81665 9.00001 0.81665 9.00001 0.81665C9.00001 0.81665 14.3369 0.81665 15.6677 1.17143ZM7.40002 4.43326V9.59993L11.6667 7.01669L7.40002 4.43326Z"
+                                      fill="white"
+                                  />
+                              </svg>
+                          </button>
+                      </div>
+                  </div>
+                  <div class="sm:ml-0 ml-8 flex flex-col">
+                      <h2 class="text-base font-semibold leading-4 text-gray-800 dark:text-white">Endereço</h2>
+                      <a href="javascript:void(0)" class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">Arena Split</a>
+                      <a href="javascript:void(0)" class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">(48 00000000)</a>
+                      <a href="javascript:void(0)" class="focus:outline-none focus:underline hover:text-gray-500 text-base leading-4 mt-6 text-gray-800 dark:text-white cursor-pointer">SplitEvent@eventos.com.br</a>
+                  </div>
+              </div>
+          </div>
+      
 
 
-    <footer>
-        <div>
-          <h3>Localização</h3>
-          <ul>
-            <li>
-              SPLIT Evento
-            </li>
-            <li>
-              R. Plastia, 231
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h3>Contato</h3>
-          <ul>
-            <li>
-              split@show.com.br
-            </li>
-            <li>
-              (32) 1113-3221
-            </li>
-          </ul>  
-        </div>
-        
-      </footer>
 
 
-
+  <script>
+    const toggleSearch = () => {
+        document.getElementById("searchInput").classList.toggle("hidden");
+    };
+    const mdOptionsToggle = () => {
+        document.getElementById("md-searchbar").classList.toggle("hidden");
+        document.getElementById("md-searchbar").classList.toggle("flex");
+    };
+    const openMenu = () => {
+        document.getElementById("mobile-menu").classList.remove("hidden");
+    };
+    const closeMenu = () => {
+        document.getElementById("mobile-menu").classList.add("hidden");
+    };
+</script>
 
     <script src="./js/popper.min.js"></script>
     <script src="./bootstrap-5.0.0/js/bootstrap.min.js"></script>
