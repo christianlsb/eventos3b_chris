@@ -45,7 +45,14 @@ public class EventoController {
         }
     }
 
-    @GetMapping("/evento/list/delete{id}")
+    @GetMapping("/evento/edit/{id}")
+    public String edit(Model model, @PathVariable long id) {
+        model.addAttribute("evento", eventoService.findById(id));
+        return "evento/edit";
+    }
+
+
+    @GetMapping("/evento/delete{id}")
     public String delete(@PathVariable("id") long id) {
         Optional<Evento> eventoOpt = eventoService.findById(id);
         if (eventoOpt.isEmpty()) {

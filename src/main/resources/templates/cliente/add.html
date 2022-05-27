@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bootstrap-5.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/estilo.css">    
-    <link rel="stylesheet" href="../css/util.css">    
+    <link rel="stylesheet" href="./bootstrap-5.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,900;1,600&display=swap" rel="stylesheet">
@@ -14,62 +15,8 @@
 </head>
 
 <body>
-    <header>
-        <h2>SplitEvent</h2>
-    </header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">Cliente - add</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/">Eventos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/cliente/list">Cliente</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sobre">Sobre</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <div class="container">
-            <h4>Cliente</h4>
-            <div th:if="${isSave}" class="flex flex-col items-center justify-center py-36 px-4 gap-y-8 relative lg:mr-6">
-                <div class="h-28 relative w-full flex items-center justify-end">
-                    <!-- Success -->
-                    <div id="alertSucess" class="absolute max-w-2xl w-full bg-white border-l-4 border-green-600 rounded shadow transition duration-700 ease-in-out">
-                        <div class="p-5 relative">
-                            <div class="flex items-start">
-                                <div class="">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2.25C6.62391 2.25 2.25 6.62391 2.25 12C2.25 17.3761 6.62391 21.75 12 21.75C17.3761 21.75 21.75 17.3761 21.75 12C21.75 6.62391 17.3761 2.25 12 2.25ZM17.0742 8.73234L10.7742 16.2323C10.7051 16.3147 10.6191 16.3812 10.5221 16.4273C10.425 16.4735 10.3192 16.4983 10.2117 16.5H10.1991C10.0939 16.5 9.99 16.4778 9.89398 16.435C9.79797 16.3922 9.71202 16.3297 9.64172 16.2516L6.94172 13.2516C6.87315 13.1788 6.81981 13.0931 6.78483 12.9995C6.74986 12.9059 6.73395 12.8062 6.73805 12.7063C6.74215 12.6064 6.76617 12.5084 6.8087 12.4179C6.85124 12.3275 6.91142 12.2464 6.98572 12.1796C7.06002 12.1127 7.14694 12.0614 7.24136 12.0286C7.33579 11.9958 7.43581 11.9822 7.53556 11.9886C7.63531 11.995 7.73277 12.0213 7.82222 12.0659C7.91166 12.1106 7.99128 12.1726 8.05641 12.2484L10.1794 14.6072L15.9258 7.76766C16.0547 7.61863 16.237 7.52631 16.4335 7.51066C16.6299 7.49501 16.8246 7.55728 16.9754 7.68402C17.1263 7.81075 17.2212 7.99176 17.2397 8.18793C17.2582 8.3841 17.1988 8.57966 17.0742 8.73234V8.73234Z" fill="#10B981"/>
-                                        </svg>                                    
-                                </div>
-                                <div class="ml-6">
-                                    <h1 class="text-lg font-semibold leading-4 text-gray-800">Success</h1>
-                                    <p class="text-sm leading-5 font-normal mt-2 text-gray-600">Your files are successfully uploaded</p>
-                                    <div class="mt-3 flex items-center">
-                                        <a href="javascript:void(0)" class="text-sm leading-3 foucs:underline font-medium pb-0.5 text-green-700 focus:outline-none border-b border-white hover:border-green-700 duration-100">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="close-modal" onclick="alertSucess()" class="absolute right-0 top-0 m-6 z-40 cursor-pointer">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 5L5 15" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5 5L15 15" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>                                
-                            </div>
-                        </div>
-                    </div>
+            <div th:if="${isSave}" class="alert alert-success">
                 <h4>Operação realizada com Sucesso!</h4>
               </div>
           
@@ -80,60 +27,64 @@
               <form th:action="@{/cliente/save}"
                 method="post"
                 th:object="${cliente}">
-                <div class="form-floating mb-3">
-                  <input type="number" th:field="*{id}" class="form-control" id="floatingInputId" placeholder="código" readonly>
-                  <label for="floatingInputId">Código</label>
+
+            <div class="py-12 bg-gray-700 dark:bg-gray-900 transition duration-150 ease-in-out z-10 absolute top-0 right-0 bottom-0 left-0" id="modal">
+                <div role="alert" class="container mx-auto w-11/12 md:w-2/3 max-w-lg">
+                    <div class="relative py-8 px-5 md:px-10 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
+                        <div class="w-full flex justify-start text-gray-600 mb-3">
+                          
+                           
+                        </div>
+                        <h1 class="text-gray-800 dark:text-white  font-lg font-bold tracking-normal leading-tight mb-4">Criar novo cliente</h1>
+
+                        <div class="relative mb-5 mt-2">
+                            <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+                            </div>
+                            <input type="number"  th:field="*{id}" class="mb-8 text-gray-600 dark:bg-gray-900 dark:text-white dark:placeholder-gray-200 dark:border-gray-700 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Código"  readonly/>
+                        </div>
+
+
+
+                        <div class="relative mb-5 mt-2">
+                            <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+                            </div>
+                            <input type="text" th:field="*{nome}" class="mb-8 text-gray-600 dark:bg-gray-900 dark:text-white dark:placeholder-gray-200 dark:border-gray-700 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Nome do cliente"  />
+                        </div>
+                                
+                        <div class="relative mb-5 mt-2">
+                            <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+                            </div>
+                            <input type="text" th:field="*{email}" class="mb-8 text-gray-600 dark:bg-gray-900 dark:text-white dark:placeholder-gray-200 dark:border-gray-700 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="E-mail do cliente"  />
+                        </div>
+                              
+                               
+                        <div class="relative mb-5 mt-2">
+                            <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+                            </div>
+                            <input type="text" th:field="*{cpf}" class="mb-8 text-gray-600 dark:bg-gray-900 dark:text-white dark:placeholder-gray-200 dark:border-gray-700 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="CPF do cliente"/>
+                        </div>
+
+
+            
+                        
+                            <div class="flex items-center justify-start w-full">
+                                <button type="submit" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 bg-indigo-700 rounded text-white px-8 py-2 text-sm">Criar</button>
+                                <button type="button"  class=" focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-400 ml-3 bg-gray-100 transition duration-150 text-gray-600 ease-in-out hover:border-gray-400 hover:bg-gray-300 border rounded px-8 py-2 text-sm" onclick="window.location.href='./list'">Cancelar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-floating mb-3">
-                  <input type="text" th:field="*{nome}" required class="form-control" id="floatingInputNome" placeholder="Nome">
-                  <label for="floatingInputNome">Nome</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="email" th:field="*{email}" required class="form-control" id="floatingInputEmail" placeholder="E-mail">
-                  <label for="floatingInputEmail">E-mail</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="text" th:field="*{cpf}" required class="form-control" id="floatingInputCpf" placeholder="CPF">
-                  <label for="floatingInputEmail">CPF</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <button type="submit" class="btn btn-success">Salvar</button>
-                  <button type="button" class="btn btn-light"
-                    onclick="window.location.href='./list'">Cancelar
-                  </button>
-                </div>
-              </form>
             </div>
-
-    <footer>
-        <div>
-            <h3>Localização</h3>
-            <ul>
-                <li>
-                    SPLIT Evento
-                </li>
-                <li>
-                    R. Plastia, 231
-                </li>
-            </ul>
         </div>
-        <div>
-            <h3 class="h3-contato">Contato</h3>
-            <ul>
-                <li>
-                    split@show.com.br
-                </li>
-                <li>
-                    (32) 1113-3221
-                </li>
-            </ul>
-        </div>
-    </footer>
-
+    </form>
+  </div>
+    
+            
     <script src="../js/popper.min.js"></script>
     <script src="../bootstrap-5.0.0/js/bootstrap.min.js"></script>
     <script src="../js/utiljs"></script>
-  
+    <script></script>
 
 </body>
 
