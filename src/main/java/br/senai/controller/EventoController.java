@@ -2,6 +2,7 @@ package br.senai.controller;
 
 import br.senai.model.Cliente;
 import br.senai.model.Evento;
+import br.senai.service.ClienteServiceImpl;
 import br.senai.service.EventoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,9 @@ public class EventoController {
     @Autowired
     EventoServiceImpl eventoService;
 
+    @Autowired
+    ClienteServiceImpl clienteService;
+
     @GetMapping("/evento/list")
     public String findAll (Model model){
         model.addAttribute("eventos", eventoService.findAll());
@@ -26,6 +30,7 @@ public class EventoController {
     @GetMapping("/evento/add")
     public String add(Model model) {
         model.addAttribute("evento", new Evento());
+        model.addAttribute("clientes", clienteService.findAll());
         return "evento/add";
     }
 

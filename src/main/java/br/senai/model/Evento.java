@@ -1,13 +1,11 @@
 package br.senai.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 
 @Entity(name = "evento")
 public class Evento {
@@ -28,45 +26,53 @@ public class Evento {
     @NotNull
     private double preco;
 
+    @ManyToMany
+    @JoinTable(
+            name = "evento_cliente",
+            joinColumns = @JoinColumn(name = "evento_id",
+                referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "cliente_id",
+                    referencedColumnName = "id")
+    )
+
+    private List<Cliente> clientes;
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public String getHora() {
         return hora;
     }
-
     public void setHora(String hora) {
         this.hora = hora;
     }
-
     public Date getData() {
         return data;
     }
-
     public void setData(Date data) {
         this.data = data;
     }
-
     public double getPreco() {
         return preco;
     }
-
     public void setPreco(double preco) {
         this.preco = preco;
     }
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
 
     @Override
     public String toString() {
