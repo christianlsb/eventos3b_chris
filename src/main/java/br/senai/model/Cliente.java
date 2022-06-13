@@ -22,6 +22,10 @@ public class Cliente {
     @Size(max=25)
     private String cpf;
 
+    @Size(max=100)
+    private String senha;
+
+
     @ManyToMany(mappedBy =  "clientes")
     private List<Evento> eventos;
 
@@ -55,6 +59,12 @@ public class Cliente {
     public void setEventos(List<Evento> eventos) {
         this.eventos = eventos;
     }
+    public String getSenha() {
+        return senha;
+    }
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
     @Override
     public String toString() {
@@ -63,6 +73,9 @@ public class Cliente {
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", cpf='" + cpf + '\'' +
+                ", senha='" + senha + '\'' +
+                ", eventos=" + eventos +
                 '}';
     }
 }
+
