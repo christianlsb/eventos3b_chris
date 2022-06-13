@@ -14,15 +14,15 @@ public class Cliente {
     @Column(name = "nome")
     @NotNull
     @Size(max = 100)
-    private String nome;
+    private String username;
 
     @Size(max = 100)
+    @NotNull
     private String email;
 
-    @Size(max=25)
-    private String cpf;
 
     @Size(max=100)
+    @NotNull
     private String senha;
 
 
@@ -35,24 +35,22 @@ public class Cliente {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getNome() {
-        return nome;
+
+    public String getUsername() {
+        return username;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
+
+    public void setUsername(String username) {
+        this.username = username;
     }
+
     public String getEmail() {
         return email;
     }
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getCpf() {
-        return cpf;
-    }
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+
     public List<Evento> getEventos() {
         return eventos;
     }
@@ -70,9 +68,8 @@ public class Cliente {
     public String toString() {
         return "Cliente{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
+                ", username='   " + username + '\'' +
                 ", email='" + email + '\'' +
-                ", cpf='" + cpf + '\'' +
                 ", senha='" + senha + '\'' +
                 ", eventos=" + eventos +
                 '}';

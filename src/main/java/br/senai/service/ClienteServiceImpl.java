@@ -4,6 +4,7 @@ import br.senai.model.Cliente;
 import br.senai.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.Optional;
 @Service
 public class ClienteServiceImpl implements ClienteService{
 
+    @Autowired
+    private Argon2PasswordEncoder encoder;
     @Autowired
     ClienteRepository clienteRepository;
 
@@ -22,6 +25,8 @@ public class ClienteServiceImpl implements ClienteService{
 
     public Cliente save(Cliente cliente){
         try {
+            String passwordEncoded  = encoder.encode(cliente.getSenha());
+            cliente.setSenha(passwordEncoded);
             return clienteRepository.save(cliente);
         } catch (Exception e){
             throw e;
