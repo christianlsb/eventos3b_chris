@@ -51,10 +51,8 @@ public class UserController {
     }
 
     @PostMapping("/login_verification")
-    public ResponseEntity<String> loginVerification(){
-        try {
-
-        }
+    public ResponseEntity<String> loginVerification(@RequestBody User user){
+        return ResponseEntity.ok(userService.isUserExist(user));
     }
 
 
