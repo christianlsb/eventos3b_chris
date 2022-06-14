@@ -10,4 +10,5 @@ public class UserConfig {
     public Argon2PasswordEncoder encoder(){
         return new Argon2PasswordEncoder();
     }
+
 }

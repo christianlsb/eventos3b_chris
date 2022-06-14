@@ -30,7 +30,7 @@ public class Evento {
     @JoinTable(
             name = "evento_cliente",
             joinColumns = @JoinColumn(name = "evento_id",
-                referencedColumnName = "id"),
+                    referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "cliente_id",
                     referencedColumnName = "id")
     )

@@ -11,7 +11,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome")
+    @Column(name = "username")
     @NotNull
     @Size(max = 100)
     private String username;
@@ -19,11 +19,6 @@ public class Cliente {
     @Size(max = 100)
     @NotNull
     private String email;
-
-
-    @Size(max=100)
-    @NotNull
-    private String senha;
 
 
     @ManyToMany(mappedBy =  "clientes")
@@ -57,12 +52,6 @@ public class Cliente {
     public void setEventos(List<Evento> eventos) {
         this.eventos = eventos;
     }
-    public String getSenha() {
-        return senha;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
 
     @Override
     public String toString() {
@@ -70,7 +59,6 @@ public class Cliente {
                 "id=" + id +
                 ", username='   " + username + '\'' +
                 ", email='" + email + '\'' +
-                ", senha='" + senha + '\'' +
                 ", eventos=" + eventos +
                 '}';
     }

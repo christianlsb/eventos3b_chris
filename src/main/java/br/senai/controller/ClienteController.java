@@ -18,11 +18,13 @@ public class ClienteController {
     @Autowired
     ClienteServiceImpl clienteService;
 
-    @GetMapping("/cliente/list")
+    @GetMapping("/cliente/list?={TOKEN}")
     public String findAll(Model model) {
         model.addAttribute("clientes", clienteService.findAll());
         return "cliente/list";
     }
+
+
 
     @GetMapping("/cliente/add")
     public String add(Model model) {

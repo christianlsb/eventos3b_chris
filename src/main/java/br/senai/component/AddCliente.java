@@ -12,16 +12,15 @@ import javax.transaction.Transactional;
 @Transactional
 public class AddCliente implements CommandLineRunner {
 
-    @Autowired
-    private ClienteServiceImpl clienteService;
+
 
     @Override
     public void run(String... args) throws Exception {
-        Cliente cliente = new Cliente();
-        cliente.setUsername("TEAGO HENRIKE");
-        cliente.setEmail("teago@gmail.com");
-        cliente.setSenha("abc123456");
-
-        clienteService.save(cliente);
+//        Cliente cliente = new Cliente();
+//        cliente.setUsername("TEAGO HENRIKE");
+//        cliente.setEmail("teago@gmail.com");
+//        cliente.setSenha("abc123456");
+//
+//        clienteService.save(cliente);
     }
 }
