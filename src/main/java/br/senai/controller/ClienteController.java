@@ -1,7 +1,7 @@
 package br.senai.controller;
 
 import br.senai.model.Cliente;
-import br.senai.service.ClienteServiceImpl;
+import br.senai.service.ClienteService.ClienteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.lang.ref.Cleaner;
 import java.util.Optional;
 
 @Controller
@@ -18,7 +17,7 @@ public class ClienteController {
     @Autowired
     ClienteServiceImpl clienteService;
 
-    @GetMapping("/cliente/list?={TOKEN}")
+    @GetMapping("/cliente/list")
     public String findAll(Model model) {
         model.addAttribute("clientes", clienteService.findAll());
         return "cliente/list";

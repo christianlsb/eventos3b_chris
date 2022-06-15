@@ -1,8 +1,5 @@
 package br.senai.component;
 
-import br.senai.model.Cliente;
-import br.senai.service.ClienteServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

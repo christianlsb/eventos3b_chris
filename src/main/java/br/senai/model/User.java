@@ -30,6 +30,9 @@ public class User {
     @Column(name = "photo")
     private String photo;
 
+
+
+
     public User() {
 
     }

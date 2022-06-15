@@ -1,4 +1,4 @@
-package br.senai.service;
+package br.senai.service.EventoService;
 import br.senai.model.Cliente;
 import br.senai.model.Evento;
 import java.util.List;

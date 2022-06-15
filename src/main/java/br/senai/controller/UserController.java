@@ -1,9 +1,8 @@
 package br.senai.controller;
 
-import br.senai.model.Cliente;
+import br.senai.service.UserService.ResponseUser;
 import br.senai.model.User;
-import br.senai.service.ClienteServiceImpl;
-import br.senai.service.UserServiceImpl;
+import br.senai.service.UserService.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,39 +20,44 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
 
-    @GetMapping("/cadastro")
-    public String cadastroPage(){
-        return "users/registrar";
-    }
 
-
-    @GetMapping("/users/list")
+    @GetMapping("/list")
     public ResponseEntity<List<User>> usersList(){
         return ResponseEntity.ok(userService.findAllUsers());
     }
 
-    @PostMapping("/create_user")
-    public ResponseEntity<String> addUser(@RequestBody User user){
+    @GetMapping("/users/cadastro")
+    public String cadastroPage(@ModelAttribute User user){
+        return "users/cadastro";
+    }
 
+    @PostMapping("/users/create_user")
+    public ResponseEntity<ResponseUser> addUser(@ModelAttribute User user){
+        ResponseUser responseUser = new ResponseUser();
         try{
-             userService.create_user(user);
-            return ResponseEntity.ok("true");
+             userService.createUser(user);
+             responseUser.setUser(user);
+             responseUser.setExist(true);
+             return ResponseEntity.ok(responseUser);
         }
         catch (Exception e){
             System.out.println(e);
-            return ResponseEntity.ok("false");
+            responseUser.setExist(false);
+            return ResponseEntity.ok(responseUser).;
         }
     }
 
     @GetMapping("/login")
-    public ResponseEntity<String> loginPage(){
-        return ResponseEntity.ok("users/entrar");
+    public String loginPage(){
+        return "users/entrar";
     }
 
     @PostMapping("/login_verification")
-    public ResponseEntity<String> loginVerification(@RequestBody User user){
+    public ResponseEntity<ResponseUser> loginVerification(@RequestBody User user){
         return ResponseEntity.ok(userService.isUserExist(user));
     }
+
+
 
 
 }
