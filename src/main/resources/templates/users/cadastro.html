@@ -28,7 +28,8 @@
                 </div>
             
                 <input
-                    th:field="*{username}"
+                   th:field="*{username}"
+                    oninput="setUsername(this.value)"
                     class="border rounded px-3 py-1 mt-2"
                     type="text"
                     placeholder="Username" 
@@ -40,7 +41,8 @@
                 <div class="text-xs text-red-400 flex justify-between items-center">
                 </div>
                 <input 
-                    th:field="*{email}"
+                th:field="*{email}"
+                    oninput="setEmail(this.value)"
                     class="border rounded px-3 py-1 mt-2"
                     type="email"
                     placeholder="E-mail" 
@@ -51,13 +53,14 @@
                 <label class="text-xs text-gray-400">Senha</label>
                 <input
                 th:field="*{password}"
+                oninput="setPassword(this.value)"
                 class="border rounded px-3 py-1 mt-2"
                 type="password"
                 placeholder="••••••••"
                 />
             </div>
             <div class="flex flex-col items-center justify-center my-3">
-                <button type="submit" class="my-3 py-1 w-full rounded bg-blue-600 text-blue-200">
+                <button type="submit" id="btn_registrar" class="my-3 py-1 w-full rounded bg-blue-600 text-blue-200">
                     Registrar
                 </button>
                 <p class="text-xs text-gray-500">
@@ -70,6 +73,6 @@
     </div>
 </div>
     </main>
-    <script src="../static/js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

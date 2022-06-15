@@ -238,12 +238,16 @@
                   </div>
               </div>
           </div>
-      
-
-
+          
+          <div id="user" th:object="${user}" style="display: none">
+           
+        </div>
 
 
   <script>
+
+   
+   
     const toggleSearch = () => {
         document.getElementById("searchInput").classList.toggle("hidden");
     };
@@ -261,6 +265,8 @@
 
     <script src="./js/popper.min.js"></script>
     <script src="./bootstrap-5.0.0/js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
+    
 
 </body>
 

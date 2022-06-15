@@ -40,7 +40,6 @@ public class UserController {
              userService.createUser(user);
              responseUser.setUser(user);
              responseUser.setExist(true);
-             attributes.addAttribute("user", responseUser.getUser());
              return new RedirectView("/home");
         }
         catch (Exception e){
