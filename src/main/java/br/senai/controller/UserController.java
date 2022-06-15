@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -32,18 +34,20 @@ public class UserController {
     }
 
     @PostMapping("/users/create_user")
-    public ResponseEntity<ResponseUser> addUser(@ModelAttribute User user){
+    public RedirectView addUser(@ModelAttribute User user, RedirectAttributes attributes){
         ResponseUser responseUser = new ResponseUser();
         try{
              userService.createUser(user);
              responseUser.setUser(user);
              responseUser.setExist(true);
-             return ResponseEntity.ok(responseUser);
+             attributes.addAttribute("user", responseUser.getUser());
+             return new RedirectView("/home");
         }
         catch (Exception e){
             System.out.println(e);
             responseUser.setExist(false);
-            return ResponseEntity.ok(responseUser).;
+            attributes.addAttribute("isExist", responseUser.isExist());
+            return new RedirectView("users/cadastro");
         }
     }
 

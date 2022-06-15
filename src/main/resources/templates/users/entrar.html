@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
               </svg>
             <h2 class="text-2xl font-bold">Registrar</h2>
         </div>
-        <form action="#" method="POST">
+        <form th:action="@{/login_verification}" method="POST">
 
 
             <!-- username -->
@@ -35,6 +35,7 @@
                     placeholder="Usuário" 
                    />
             </div>
+            
 
             <!-- password -->
             <div class="flex flex-col my-2">
@@ -47,7 +48,7 @@
                 />
             </div>
             <div class="flex flex-col items-center justify-center my-3">
-                <button class="my-3 py-1 w-full rounded bg-blue-600 text-blue-200">
+                <button type="submit" class="my-3 py-1 w-full rounded bg-blue-600 text-blue-200">
                     Entrar
                 </button>
                 <p class="text-xs text-gray-500">
