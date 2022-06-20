@@ -4,6 +4,7 @@ import br.senai.service.UserService.ResponseUser;
 import br.senai.model.User;
 import br.senai.service.UserService.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,19 +35,18 @@ public class UserController {
     }
 
     @PostMapping("/users/create_user")
-    public RedirectView addUser(@ModelAttribute User user, RedirectAttributes attributes){
+    public ResponseEntity<ResponseUser> addUser(@RequestBody User user){
         ResponseUser responseUser = new ResponseUser();
         try{
              userService.createUser(user);
              responseUser.setUser(user);
              responseUser.setExist(true);
-             return new RedirectView("/home");
+             return ResponseEntity.ok(responseUser);
         }
         catch (Exception e){
             System.out.println(e);
             responseUser.setExist(false);
-            attributes.addAttribute("isExist", responseUser.isExist());
-            return new RedirectView("users/cadastro");
+            return ResponseEntity.ok(responseUser);
         }
     }
 

@@ -18,7 +18,7 @@
               </svg>
             <h2 class="text-2xl font-bold">Registrar</h2>
         </div>
-        <form th:action="@{/users/create_user}" th:object="${user}" method="POST">
+        <!-- <form th:action="@{/users/create_user}" th:object="${user}" method="POST"> -->
 
             <!-- username -->
 
@@ -28,7 +28,6 @@
                 </div>
             
                 <input
-                   th:field="*{username}"
                     oninput="setUsername(this.value)"
                     class="border rounded px-3 py-1 mt-2"
                     type="text"
@@ -41,7 +40,6 @@
                 <div class="text-xs text-red-400 flex justify-between items-center">
                 </div>
                 <input 
-                th:field="*{email}"
                     oninput="setEmail(this.value)"
                     class="border rounded px-3 py-1 mt-2"
                     type="email"
@@ -52,7 +50,6 @@
             <div class="flex flex-col my-2">
                 <label class="text-xs text-gray-400">Senha</label>
                 <input
-                th:field="*{password}"
                 oninput="setPassword(this.value)"
                 class="border rounded px-3 py-1 mt-2"
                 type="password"
@@ -60,19 +57,19 @@
                 />
             </div>
             <div class="flex flex-col items-center justify-center my-3">
-                <button type="submit" id="btn_registrar" class="my-3 py-1 w-full rounded bg-blue-600 text-blue-200">
+                <button type="button" id="btn_registrar" class="my-3 py-1 w-full rounded bg-blue-600 text-blue-200">
                     Registrar
                 </button>
                 <p class="text-xs text-gray-500">
                     Já possui uma conta? 
-                        <a href="./entrar.html" class="font-bold text-gray-700">Clique aqui</a> 
+                        <a href="/login" class="font-bold text-gray-700">Clique aqui</a> 
                         para entrar.
                 </p>
             </div>
-        </form>
+        <!-- </form> -->
     </div>
 </div>
     </main>
-    <script src="../js/main.js"></script>
+    <script src="../js/create_user.js"></script>
 </body>
 </html>

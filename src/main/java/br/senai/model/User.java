@@ -1,6 +1,8 @@
 package br.senai.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -12,16 +14,22 @@ public class User {
     private Long user_id;
 
     @NotNull
+    @NotBlank
+    @NotEmpty
     @Size(max = 100)
     @Column(name = "username", unique = true)
     private String username;
 
     @NotNull
+    @NotBlank
+    @NotEmpty
     @Size(max = 100)
     @Column(name = "email", unique = true)
     private String email;
 
     @NotNull
+    @NotBlank
+    @NotEmpty
     @Size(max = 100)
     @Column(name = "password")
     private String password;
@@ -29,7 +37,6 @@ public class User {
     @Size(max = 100)
     @Column(name = "photo")
     private String photo;
-
 
 
     public User() {

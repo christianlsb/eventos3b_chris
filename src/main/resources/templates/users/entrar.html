@@ -18,21 +18,21 @@
               </svg>
             <h2 class="text-2xl font-bold">Registrar</h2>
         </div>
-        <form th:action="@{/login_verification}" method="POST">
+        <!-- <form th:action="@{/login_verification}" method="POST"> -->
 
 
             <!-- username -->
 
             <div class="flex flex-col my-2">
-                <label class="text-xs text-gray-400">Usuário</label>
+                <label class="text-xs text-gray-400">Email</label>
                 <div class="text-xs text-red-400 flex justify-between items-center">
                 </div>
             
                 <input
-                    th:field 
+                    oninput="setEmail(this.value)"
                     class="border rounded px-3 py-1 mt-2"
-                    type="text"
-                    placeholder="Usuário" 
+                    type="email"
+                    placeholder="Email" 
                    />
             </div>
             
@@ -41,14 +41,14 @@
             <div class="flex flex-col my-2">
                 <label class="text-xs text-gray-400">Senha</label>
                 <input
-                th:field  
+                oninput="setPassword(this.value)"
                 class="border rounded px-3 py-1 mt-2"
                 type="password"
                 placeholder="••••••••"
                 />
             </div>
             <div class="flex flex-col items-center justify-center my-3">
-                <button type="submit" class="my-3 py-1 w-full rounded bg-blue-600 text-blue-200">
+                <button id="btn_login" class="my-3 py-1 w-full rounded bg-blue-600 text-blue-200">
                     Entrar
                 </button>
                 <p class="text-xs text-gray-500">
@@ -57,9 +57,10 @@
                         para registrar.
                 </p>
             </div>
-        </form>
+        <!-- </form> -->
     </div>
 </div>
     </main>
+    <script src="./js/login.js"></script>
 </body>
 </html>
