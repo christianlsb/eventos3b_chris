@@ -1,4 +1,4 @@
-package br.senai.component;
+package br.senai.components;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

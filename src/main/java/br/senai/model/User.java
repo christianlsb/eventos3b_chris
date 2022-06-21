@@ -5,6 +5,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity(name = "usuario")
 public class User {
@@ -37,7 +38,7 @@ public class User {
     @Size(max = 100)
     @Column(name = "photo")
     private String photo;
-
+    
 
     public User() {
 
@@ -82,7 +83,17 @@ public class User {
     public void setPhoto(String photo) {
         this.photo = photo;
     }
-
+     
+    @ManyToMany
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<Role> roles;
+    
+    
+    
     @Override
     public String toString() {
         return "User{" +

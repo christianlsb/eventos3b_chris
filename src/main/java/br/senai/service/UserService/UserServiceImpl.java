@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService{
     public List<User> findAllUsers() {
         return userRepository.findAll();
     }
-
+    
     // Verifica se o usuario está cadastrado no sistema
     @Override
     public ResponseUser isUserExist(User user){

@@ -22,7 +22,7 @@ public class UserController {
 
     @Autowired
     private UserServiceImpl userService;
-
+ 
 
     @GetMapping("/list")
     public ResponseEntity<List<User>> usersList(){
