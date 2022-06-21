@@ -3,19 +3,44 @@
 .cards-1{
     border-radius: 10px;
     background-color: azure;
-    margin: 0 0 0 20px;
+    margin: 20px 0px 0px 20px;
 }
 
 .cards-2{
     border-radius: 10px;
     background-color: azure;
-    margin: 0 0px 0px 20px;
+    margin: 20px 0px 0px 20px;
+}
+
+.cards-3{
+    border-radius: 10px;
+    background-color: azure;
+    margin: 20px 0px 0px 20px;
+}
+
+.cards-4{
+    border-radius: 10px;
+    background-color: azure;
+    margin: 20px 0px 0px 20px;
+}
+
+.cards-5{
+    border-radius: 10px;
+    background-color: azure;
+    margin: 20px 0px 0px 20px;
+}
+
+.cards-6{
+    border-radius: 10px;
+    background-color: azure;
+    margin: 20px 0px 0px 20px;
 }
 
 .card{
     background-color: #18181B;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -25,12 +50,32 @@
 }
 
 .cards-1:hover {
-    transform: scale(1.15);
+    transform: scale(1.05);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
   }
 
   .cards-2:hover {
-    transform: scale(1.15);
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+
+  .cards-3:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+  
+  .cards-4:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+
+  .cards-5:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+  }
+  
+  .cards-6:hover {
+    transform: scale(1.05);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
   }
 
