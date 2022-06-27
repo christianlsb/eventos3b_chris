@@ -5,6 +5,14 @@ body {
 ::-webkit-scrollbar {
     opacity: 0%;
 }
+.img_nav{
+    width: 30px;
+    height: 30px;
+}
 
+.img_logo{
+    width: 425px;
+    height: 157px;
+}
 /* like/deslike */
 
