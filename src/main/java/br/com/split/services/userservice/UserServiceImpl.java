@@ -2,9 +2,11 @@ package br.com.split.services.userservice;
 
 import br.com.split.models.Usuario;
 import br.com.split.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
@@ -20,14 +22,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void createUser(Usuario user) {
-        try{
-          Usuario isUserExists = userRepository.findUserByUsername(user.getUsername());
-          if (isUserExists == null){
-              userRepository.save(user);
-          }
-        }
-        catch (Exception e){
-            throw new IllegalStateException("User already Exists");
-        }
+
     }
+
+
 }
