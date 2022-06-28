@@ -1,9 +1,10 @@
 body {
     background-color: #222226;
+    
 }
 
 ::-webkit-scrollbar {
-    opacity: 0%;
+    display: none;
 }
 .img_nav{
     width: 30px;
@@ -11,8 +12,16 @@ body {
 }
 
 .img_logo{
-    width: 425px;
-    height: 157px;
+    margin-left: 3%;
+    width: 225px;
+    height: 75px;
 }
-/* like/deslike */
+
+.navbar-nav{
+margin-left: 70%;
+}
+
+.dropdown-toggle::after{
+    display: table-row;
+}
 
