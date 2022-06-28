@@ -29,6 +29,7 @@ public class Usuario {
     private String email;
 
     @Size(max = 100)
+    @Column(name = "user_password")
     @NotEmpty
     @NotNull
     private String password;
