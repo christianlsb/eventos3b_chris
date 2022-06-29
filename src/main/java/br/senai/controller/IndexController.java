@@ -16,4 +16,14 @@ public class IndexController {
         return "sobre";
     }
 
+
+    @GetMapping("/perfil")
+    public  String perfil() {return "users/perfil";}
+
+    @GetMapping("/favorito")
+    public String favorito() {return "users/favorito";}
+
+    @GetMapping("/home")
+    public String home() {return "/home";}
 }
+
