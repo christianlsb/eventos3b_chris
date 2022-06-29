@@ -8,6 +8,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Collection;
+import java.util.Set;
 
 @Entity
 public class Usuario implements UserDetails {
@@ -27,6 +28,7 @@ public class Usuario implements UserDetails {
     @NotEmpty
     @NotNull
     private String real_name;
+
     @Size(max = 100)
     @Column(unique = true)
     @NotEmpty
@@ -38,6 +40,10 @@ public class Usuario implements UserDetails {
     @NotEmpty
     @NotNull
     private String password;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Role> roles;
+
 
     public Usuario() {
     }
@@ -74,6 +80,22 @@ public class Usuario implements UserDetails {
         return true;
     }
 
+    public String getReal_name() {
+        return real_name;
+    }
+
+    public void setReal_name(String real_name) {
+        this.real_name = real_name;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -87,7 +109,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return this.roles;
     }
 
     public String getPassword() {
