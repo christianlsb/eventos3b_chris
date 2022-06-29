@@ -29,7 +29,7 @@ public class TokenService {
 
         return Jwts.builder().setIssuer("SplitEventos")
                 .setSubject(user.getId().toString())
-                .setIssuedAt(new Date())
+                .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(exp)
                 .signWith(SignatureAlgorithm.HS256, secret).compact();
 

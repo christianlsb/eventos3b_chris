@@ -19,12 +19,11 @@ public class CreateUsers implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        Usuario eduardo = new Usuario();
+//       Usuario eduardo = new Usuario();
 //
-//        eduardo.setReal_name("Eduardo Paixão");
-//        eduardo.setUsername("Eduardo668");
-//        eduardo.setPassword("abc12345");
-//        eduardo.setEmail("eduardosehn20@gmail.com");
+//       eduardo.setReal_name("Eduardo Paixão");
+//       eduardo.setUsername("Eduardo668");eduardo.setPassword("abc12345");
+//       eduardo.setEmail("eduardosehn20@gmail.com");
 //
 //        userService.createUser(eduardo);
     }

@@ -65,12 +65,11 @@ public class TokenAuthencationFilter extends OncePerRequestFilter {
             token = null;
         }
 
-        return token.substring(7, token.length());
+    
+        return token != null ? token.substring(7, token.length()) : null;
 
 
     }
-
-
 
 
 
