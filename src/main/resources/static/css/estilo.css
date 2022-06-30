@@ -72,4 +72,14 @@ margin-left: 70%;
     display: none;
   }
   
-  dfgd
+ #img_fixed_center{
+  margin-left: auto;
+  margin-right: auto;
+    width: 225px;
+    height: 75px;
+ }
+
+ #nav_sobre{
+  position: absolute;
+  right: 10%
+ }
