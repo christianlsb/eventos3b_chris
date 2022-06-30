@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../fontawesome-5.15.3/css/all.css">
+    <link rel="stylesheet" href="../../bootstrap-5.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/estilo.css">
+    <link rel="icon" href="img/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,900;1,600&display=swap" rel="stylesheet">
+  <title>SplitEvent</title>
+</head>
+
+
+<body>
+   
+
+    <div class="container">
+            <h4>Cliente - Editar</h4>
+            <div th:if="${isSave}" class="alert alert-success">
+                <h4>Operação realizada com Sucesso!</h4>
+              </div>
+          
+              <div th:if="${isError}" class="alert alert-danger">
+                <h4>Ocorreu um erro ao salvar!</h4>
+              </div>
+          
+              <form th:action="@{/evento/save}"
+                method="post"
+                th:object="${evento}">
+                <div class="form-floating mb-3">
+                  <input type="number" th:field="${cliente.id}" class="form-control" id="floatingInputId" placeholder="código" readonly>
+                  <label for="floatingInputId">Código</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" th:field="${cliente.nome}" required class="form-control" id="floatingInputNome" placeholder="Nome">
+                  <label for="floatingInputNome">Nome</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" th:field="${cliente.email}" required class="form-control" id="floatingInputEmail" placeholder="E-mail">
+                  <label for="floatingInputEmail">E-mail</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" th:field="${cliente.cpf}" required class="form-control" id="floatingInputCpf" placeholder="CPF">
+                  <label for="floatingInputEmail">CPF</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <button type="submit" class="btn btn-success">Salvar</button>
+                  <button type="button" class="btn btn-light"
+                    onclick="window.location.href='../list'">Cancelar
+                  </button>
+                </div>
+              </form>
+            </div>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../bootstrap-5.0.0/js/bootstrap.min.js"></script>
+    <script src="../../js/utiljs"></script>
+  
+
+</body>
+
+</html>
