@@ -24,6 +24,12 @@ public class UserController {
         return ResponseEntity.ok(userService.findAllUsers());
     }
 
+    @GetMapping("/teste")
+    public ResponseEntity<String> teste(){
+        return ResponseEntity.ok("FUNCIONOU");
+    }
+
+
     @PostMapping("/create_user")
     public ResponseEntity<String> createUser(@RequestBody Usuario user){
         try {
@@ -34,6 +40,9 @@ public class UserController {
             throw new IllegalStateException("Ocorreu algum erro");
         }
     }
+
+
+
 
 
 }

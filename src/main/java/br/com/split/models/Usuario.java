@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.Set;
 
 @Entity
-public class Usuario implements UserDetails {
+public class Usuario  {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -41,7 +41,12 @@ public class Usuario implements UserDetails {
     @NotNull
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
+    @JoinTable(
+            name = "role_user",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
     private Set<Role> roles;
 
 
@@ -60,25 +65,6 @@ public class Usuario implements UserDetails {
         return username;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
 
     public String getReal_name() {
         return real_name;
@@ -107,10 +93,7 @@ public class Usuario implements UserDetails {
         this.email = email;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return this.roles;
-    }
+
 
     public String getPassword() {
         return password;
