@@ -1,22 +1,19 @@
 package br.com.spliteventos.services.userservice;
 
+import br.com.spliteventos.controllers.FavoriteEvento;
 import br.com.spliteventos.models.Role;
 import br.com.spliteventos.models.Usuario;
 import br.com.spliteventos.repository.RoleRepo;
 import br.com.spliteventos.repository.UsuarioRepo;
 import br.com.spliteventos.services.CustomUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.sql.Array;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collection;
@@ -57,6 +54,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
+    public void favoriteEvent(FavoriteEvento favoriteEvento) {
+
+    }
+
+    @Override
     public List<Usuario> findAllUsuarios() {
         return usuarioRepo.findAll();
     }
@@ -70,7 +72,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
         CustomUser customUser = new CustomUser(username, user_data.getUser_password(),
                 true, true,true, true,
-                authorities(user_data), user_data.getEmail());
+                authorities(user_data), user_data.getEmail(), user_data.getId(), user_data.getFavoriteEvents());
 
         UserDetails userDetails = customUser;
 

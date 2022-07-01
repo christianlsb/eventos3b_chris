@@ -33,6 +33,14 @@ public class UserController {
         }
     }
 
+    @PostMapping("/addFavoriteEvent")
+    public ResponseEntity<Boolean> addFavoriteUser(@RequestBody FavoriteEvento favoriteEvento){
+        try{
+
+        }
+    }
+
+
 
 
 

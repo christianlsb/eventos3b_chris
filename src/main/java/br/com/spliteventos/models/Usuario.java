@@ -34,6 +34,23 @@ public class Usuario {
     )
     private List<Role> permissions;
 
+
+    @ManyToMany
+    @JoinTable(
+            name = "favorite_user_events",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "evento_id")
+    )
+    private List<Evento> favoriteEvents;
+
+    public List<Evento> getFavoriteEvents() {
+        return favoriteEvents;
+    }
+
+    public void setFavoriteEvents(List<Evento> favoriteEvents) {
+        this.favoriteEvents = favoriteEvents;
+    }
+
     public Long getId() {
         return id;
     }

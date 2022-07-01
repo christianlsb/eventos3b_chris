@@ -17,12 +17,12 @@ public class CreateEvento implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        Evento evento = new Evento();
-//        evento.setNome("Show Ivete Sangalo");
-//        evento.setDescription("Show da ivete sangalo venha curtir conosco, bora se divertir");
-//        evento.setData("22/08");
-//        evento.setLocal("Ratones");
-//        evento.setPreco(140.50);
-//        eventoService.createEvento(evento);
+        Evento evento = new Evento();
+        evento.setNome("Show Ivete Sangalo");
+        evento.setDescription("Show da ivete sangalo venha curtir conosco, bora se divertir");
+        evento.setData("22/08");
+        evento.setLocal("Ratones");
+        evento.setPreco(140.50);
+        eventoService.createEvento(evento);
     }
 }

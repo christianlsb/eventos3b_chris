@@ -29,7 +29,13 @@ public class PageController {
         return "redirect:login";
     }
 
-    @GetMapping("/perfil")
+    @GetMapping("/users/favoritos")
+    public String favoriteUserEventos(Model model, Authentication authentication){
+        model.addAttribute("favoriteEventos", authentication.getPrincipal());
+        return "users/favoritos.html";
+    }
+
+    @GetMapping("users//perfil")
     public String userPerfil(Model model, Authentication authentication){
         model.addAttribute("user", authentication.getPrincipal());
         return "users/perfil.html";
