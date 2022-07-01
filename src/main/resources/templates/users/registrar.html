@@ -18,7 +18,7 @@
               </svg>
             <h2 class="text-2xl font-bold">Registrar</h2>
         </div>
-        <form action="#" method="POST">
+        <!-- <form th:action="@{/createUser}" method="POST" th:object="${usuario}"> -->
 
 
             <!-- username -->
@@ -28,8 +28,8 @@
                 <div class="text-xs text-red-400 flex justify-between items-center">
                 </div>
             
-                <input
-                    th:field 
+                <input 
+                    oninput="setUsername(this.value)"
                     class="border rounded px-3 py-1 mt-2"
                     type="text"
                     placeholder="Usuário" 
@@ -41,7 +41,7 @@
                 <div class="text-xs text-red-400 flex justify-between items-center">
                 </div>
                 <input 
-                    th:field 
+                    oninput="setEmail(this.value)"
                     class="border rounded px-3 py-1 mt-2"
                     type="email"
                     placeholder="E-mail" 
@@ -51,14 +51,14 @@
             <div class="flex flex-col my-2">
                 <label class="text-xs text-gray-400">Senha</label>
                 <input
-                th:field  
+                oninput="setUserPassword(this.value)"
                 class="border rounded px-3 py-1 mt-2"
                 type="password"
                 placeholder="••••••••"
                 />
             </div>
             <div class="flex flex-col items-center justify-center my-3">
-                <button class="my-3 py-1 w-full rounded bg-blue-600 text-blue-200">
+                <button id="btn_cadastro" class="my-3 py-1 w-full rounded bg-blue-600 text-blue-200">
                     Registrar
                 </button>
                 <p class="text-xs text-gray-500">
@@ -66,10 +66,53 @@
                         <a href="./entrar.html" class="font-bold text-gray-700">Clique aqui</a> 
                         para entrar.
                 </p>
+               
             </div>
-        </form>
+        <!-- </form> -->
     </div>
 </div>
     </main>
+    <script>
+        const User = {
+            "username": undefined,
+            "user_password":undefined,
+            "email": undefined
+        }
+
+        const setUsername = (username)=>{
+            User.username = username;
+        }
+
+        const setUserPassword = (password)=>{
+            User.user_password = password;
+        }
+
+        const setEmail = (email)=>{
+            User.email = email;
+        }
+
+
+        const create_user = async (User)=>{
+            const response = await fetch("http://localhost:8080/createUser",{
+                method:"POST",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(User)
+            })
+            const isCreated = await response.json();
+            if (isCreated){
+                 window.location.href = "/login"
+                
+            }
+            else{
+                alert("Nome de usuario ja existe")
+            }
+        }
+        const btnCadastrar = document.getElementById('btn_cadastro')
+
+        btnCadastrar.addEventListener('click', ()=>{
+            create_user(User);
+        })
+    </script>
+    <!-- <script src="../static/js/cadastro.js"></script> -->
 </body>
 </html>

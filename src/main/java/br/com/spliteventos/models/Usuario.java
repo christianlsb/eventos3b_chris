@@ -24,7 +24,6 @@ public class Usuario {
 
     @Size(max = 100)
     @NotNull
-    @Column(unique = true)
     private String email;
 
     @ManyToMany
