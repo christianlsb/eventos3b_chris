@@ -1,9 +1,11 @@
 package br.com.spliteventos.models;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Usuario {
@@ -35,19 +37,19 @@ public class Usuario {
     private List<Role> permissions;
 
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "favorite_user_events",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "evento_id")
     )
-    private List<Evento> favoriteEvents;
+    private Set<Evento> favoriteEvents;
 
-    public List<Evento> getFavoriteEvents() {
+    public Set<Evento> getFavoriteEvents() {
         return favoriteEvents;
     }
 
-    public void setFavoriteEvents(List<Evento> favoriteEvents) {
+    public void setFavoriteEvents(Set<Evento> favoriteEvents) {
         this.favoriteEvents = favoriteEvents;
     }
 

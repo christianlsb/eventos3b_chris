@@ -36,7 +36,9 @@ public class UserController {
     @PostMapping("/addFavoriteEvent")
     public ResponseEntity<Boolean> addFavoriteUser(@RequestBody FavoriteEvento favoriteEvento){
         try{
-
+            return ResponseEntity.ok(userService.favoriteEvent(favoriteEvento));
+        }catch (Exception e){
+            throw new IllegalArgumentException("Ocorreu um erro ao favoritar o evento");
         }
     }
 

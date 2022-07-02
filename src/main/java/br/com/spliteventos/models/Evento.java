@@ -1,9 +1,11 @@
 package br.com.spliteventos.models;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Evento {
@@ -32,7 +34,7 @@ public class Evento {
     private double preco;
 
     @ManyToMany(mappedBy = "favoriteEvents")
-    private List<Usuario> userFavoriteEvents;
+    private Set<Usuario> userFavoriteEvents;
 
 
     public Long getId() {
@@ -45,6 +47,14 @@ public class Evento {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<Usuario> getUserFavoriteEvents() {
+        return userFavoriteEvents;
+    }
+
+    public void setUserFavoriteEvents(Set<Usuario> userFavoriteEvents) {
+        this.userFavoriteEvents = userFavoriteEvents;
     }
 
     public void setId(Long id) {

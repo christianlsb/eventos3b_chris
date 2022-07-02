@@ -1,8 +1,10 @@
 package br.com.spliteventos.services.userservice;
 
 import br.com.spliteventos.controllers.FavoriteEvento;
+import br.com.spliteventos.models.Evento;
 import br.com.spliteventos.models.Role;
 import br.com.spliteventos.models.Usuario;
+import br.com.spliteventos.repository.EventoRepo;
 import br.com.spliteventos.repository.RoleRepo;
 import br.com.spliteventos.repository.UsuarioRepo;
 import br.com.spliteventos.services.CustomUser;
@@ -14,10 +16,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import javax.transaction.Transactional;
+import java.util.*;
 
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -26,10 +26,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     private UsuarioRepo usuarioRepo;
 
     @Autowired
+    private EventoRepo eventoRepo;
+
+    @Autowired
     private RoleRepo roleRepo;
 
-//    @Autowired
-//    private BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public boolean createUsuario(Usuario usuario) {
@@ -37,11 +38,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         try {
             Usuario user_data = usuarioRepo.findUserByUsername(usuario.getUsername());
             if (user_data == null){
-//                String userPassword = usuario.getUser_password();
-//                String userPasswordEncoded = passwordEncoder.encode(userPassword);
-//                usuario.setUser_password(userPasswordEncoded);
                 usuario.setPermissions(Arrays.asList(roleRepo.findByNome("USER")));
-                System.out.println("PASSOU");
                 usuarioRepo.save(usuario);
                 isCreated = true;
 
@@ -54,8 +51,19 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public void favoriteEvent(FavoriteEvento favoriteEvento) {
+    public boolean favoriteEvent(FavoriteEvento favoriteEvento) {
+        boolean isFavorited = false;
+        Usuario user_data = usuarioRepo.findUserByUsername(favoriteEvento.getUsername());
+        Optional<Evento> evento_data = eventoRepo.findById(favoriteEvento.getEvento_id());
 
+        if (user_data != null){
+            user_data.getFavoriteEvents().add(evento_data.get());
+            usuarioRepo.save(user_data);
+            isFavorited = true;
+        }
+
+
+        return isFavorited;
     }
 
     @Override

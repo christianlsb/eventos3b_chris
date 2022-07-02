@@ -45,7 +45,7 @@
     justify-content: space-around;
     align-items: center;
     transition: 0.5s ease;
-    cursor: pointer;
+    /* cursor: pointer; */
     margin:30px;
 }
 

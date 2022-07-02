@@ -9,7 +9,7 @@ public interface UserService {
 
     public boolean createUsuario(Usuario usuario);
 
-    public void favoriteEvent(FavoriteEvento favoriteEvento);
+    public boolean favoriteEvent(FavoriteEvento favoriteEvento);
 
     public List<Usuario> findAllUsuarios();
 

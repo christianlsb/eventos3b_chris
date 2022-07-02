@@ -8,7 +8,7 @@
   }
   
   i {
-    cursor:pointer;
+    /* cursor:pointer; */
     padding:10px 12px 8px;
     background:#fff;
     border-radius:50%;

@@ -23,10 +23,8 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/").permitAll()
                 .antMatchers("/createUser").permitAll()
                 .antMatchers("/cadastro").permitAll()
-                .antMatchers("/sobre").permitAll()
                 .antMatchers("/bootstrap-5.0.0/**").permitAll()
                 .antMatchers("/fontawesome-5.15.3/**").permitAll()
                 .antMatchers("/css/**").permitAll()
@@ -39,7 +37,9 @@ public class SecurityWebConfig extends WebSecurityConfigurerAdapter {
                 .defaultSuccessUrl("/home")
                 .permitAll()
                 .and()
-                .rememberMe();
+                .rememberMe()
+                .and()
+                .;
 
 
     }
