@@ -56,10 +56,11 @@
      
 
 <!--  -->
+<h1 class=" text-white  ">Eventos Disponiveis</h1>
 <section >
-    <div th:each="evento : ${eventos}" class="card">
+    <div  class="card">
 
-        <div  class="cards-6">
+        <div th:each="evento : ${eventos}"  class="cards-6">
             <!-- <div th:id="${}" th:text="${evento.id}" style="display:none"></div> -->
             <div class="max-w-sm rounded overflow-hidden shadow-lg">
                 <img class="w-full" src="/img/loud.jpg" alt="Loud Campeã">
